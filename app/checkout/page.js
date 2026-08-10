@@ -145,7 +145,7 @@ export default function CheckoutInfoPage() {
                       key={opt.k}
                       className={`flex items-start gap-4 p-4 border cursor-pointer transition-all ${
                         info.shippingMethod === opt.k
-                          ? 'border-gold-400 bg-gold-400/5'
+                          ? 'border-champagne-300 bg-champagne-300/5'
                           : 'border-white/10 hover:border-white/25'
                       }`}
                     >
@@ -154,14 +154,14 @@ export default function CheckoutInfoPage() {
                         name="shipping"
                         checked={info.shippingMethod === opt.k}
                         onChange={() => set('shippingMethod', opt.k)}
-                        className="mt-1 accent-gold-400"
+                        className="mt-1 accent-champagne-300"
                       />
                       <div className="flex-1 flex justify-between gap-4">
                         <div>
                           <div className="font-medium">{opt.t}</div>
                           <div className="text-xs text-white/50 mt-1">{opt.d}</div>
                         </div>
-                        <div className="text-xs text-gold-400 whitespace-nowrap self-start">{opt.p}</div>
+                        <div className="text-xs text-champagne-200 whitespace-nowrap self-start">{opt.p}</div>
                       </div>
                     </label>
                   ))}
@@ -182,7 +182,7 @@ export default function CheckoutInfoPage() {
               </section>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                <Link href="/cart" className="text-xs uppercase tracking-widest text-white/60 hover:text-gold-400">
+                <Link href="/cart" className="text-xs uppercase tracking-widest text-white/60 hover:text-champagne-200">
                   ← Back to Cart
                 </Link>
                 <button type="submit" className="btn-gold sm:min-w-[280px]">
@@ -201,20 +201,20 @@ export default function CheckoutInfoPage() {
                       <img src={i.image} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] uppercase tracking-widest text-gold-400/80">{i.brand}</div>
+                      <div className="text-[10px] uppercase tracking-widest text-champagne-200/80">{i.brand}</div>
                       <div className="text-sm font-serif truncate">{i.model}</div>
                       <div className="text-xs text-white/50">Ref. {i.reference}</div>
                     </div>
-                    <div className="text-sm text-gold-400 whitespace-nowrap">{formatPrice(i.price)}</div>
+                    <div className="text-sm text-champagne-200 whitespace-nowrap">{formatPrice(i.price)}</div>
                   </div>
                 ))}
               </div>
               <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-sm">
                 <div className="flex justify-between"><span className="text-white/60">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-gold-400">Complimentary</span></div>
+                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-champagne-200">Complimentary</span></div>
                 <div className="flex justify-between pt-3 border-t border-white/10 mt-3">
                   <span className="uppercase tracking-widest text-xs">Total</span>
-                  <span className="font-serif text-2xl text-gold-400">{formatPrice(subtotal)}</span>
+                  <span className="font-serif text-2xl text-champagne-200">{formatPrice(subtotal)}</span>
                 </div>
               </div>
             </aside>
@@ -229,7 +229,7 @@ function Field({ label, required, error, children, full }) {
   return (
     <label className={`block ${full ? 'sm:col-span-2' : ''}`}>
       <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 flex items-center justify-between">
-        <span>{label} {required && <span className="text-gold-400">*</span>}</span>
+        <span>{label} {required && <span className="text-champagne-200">*</span>}</span>
         {error && <span className="text-red-400 normal-case tracking-normal">{error}</span>}
       </span>
       {children}
@@ -239,6 +239,6 @@ function Field({ label, required, error, children, full }) {
 
 function inputCls(err) {
   return `w-full bg-ink-950 border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none transition-colors ${
-    err ? 'border-red-400 focus:border-red-300' : 'border-white/10 focus:border-gold-400'
+    err ? 'border-red-400 focus:border-red-300' : 'border-white/10 focus:border-champagne-300'
   }`;
 }

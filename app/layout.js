@@ -1,39 +1,34 @@
 import './globals.css';
 import { CartProvider } from '@/components/CartProvider';
 import { CheckoutProvider } from '@/components/CheckoutContext';
+import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
   title: {
-    default: 'Amazing Time Pieces — Luxury & Rare Watches, Curated',
-    template: '%s | Amazing Time Pieces',
+    default: 'Amazing Timepieces — Rare & Luxury Watches, Curated',
+    template: '%s | Amazing Timepieces',
   },
   description:
-    'Amazing Time Pieces is a curated dealer of luxury, vintage, and rare timepieces. Sourcing, authentication, and worldwide delivery from Rolex to Patek Philippe.',
+    'Amazing Timepieces is a private atelier for the collector — rare Rolex, discontinued Patek Philippe, unworn Audemars Piguet. Authenticated, insured, delivered worldwide.',
   keywords: [
-    'luxury watches',
-    'rare watches',
-    'watch sourcing',
-    'Rolex',
-    'Patek Philippe',
-    'Audemars Piguet',
-    'pre-owned watches',
-    'vintage watches',
+    'luxury watches', 'rare watches', 'watch sourcing', 'Rolex', 'Patek Philippe',
+    'Audemars Piguet', 'pre-owned watches', 'vintage watches', 'watch dealer',
+    'amazing timepieces', 'authenticated watches', 'concierge watch service',
   ],
   metadataBase: new URL('https://amazingtimepieces.com'),
   openGraph: {
-    title: 'Amazing Time Pieces — Luxury & Rare Watches, Curated',
-    description:
-      'Curated luxury and rare timepieces with concierge sourcing worldwide.',
+    title: 'Amazing Timepieces — Rare & Luxury Watches, Curated',
+    description: 'A private atelier for the collector. Concierge watch sourcing worldwide.',
     type: 'website',
-    siteName: 'Amazing Time Pieces',
+    siteName: 'Amazing Timepieces',
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport = {
-  themeColor: '#0a0a0a',
+  themeColor: '#08080a',
   width: 'device-width',
   initialScale: 1,
 };
@@ -44,6 +39,7 @@ export default function RootLayout({ children }) {
       <body>
         <CartProvider>
           <CheckoutProvider>
+            <TopBar />
             <Header />
             <main className="min-h-screen">{children}</main>
             <Footer />

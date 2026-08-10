@@ -25,9 +25,9 @@ export default function CheckoutSteps({ active }) {
                   <span
                     className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-medium border transition-colors ${
                       isActive
-                        ? 'bg-gold-400 text-ink-950 border-gold-400'
+                        ? 'bg-champagne-300 text-ink-950 border-champagne-300'
                         : isComplete
-                        ? 'bg-gold-400/20 text-gold-400 border-gold-400/50'
+                        ? 'bg-champagne-300/20 text-champagne-200 border-champagne-300/50'
                         : 'text-white/40 border-white/15'
                     }`}
                   >
@@ -42,7 +42,7 @@ export default function CheckoutSteps({ active }) {
                   </span>
                 </Link>
                 {i < STEPS.length - 1 && (
-                  <span className={`w-6 sm:w-14 h-px ${i < activeIndex ? 'bg-gold-400/50' : 'bg-white/10'}`} />
+                  <span className={`w-6 sm:w-14 h-px ${i < activeIndex ? 'bg-champagne-300/50' : 'bg-white/10'}`} />
                 )}
               </li>
             );

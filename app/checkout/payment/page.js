@@ -98,7 +98,7 @@ export default function PaymentPage() {
                       key={opt.id}
                       className={`flex items-start gap-4 p-4 sm:p-5 border cursor-pointer transition-all ${
                         selected === opt.id
-                          ? 'border-gold-400 bg-gold-400/5'
+                          ? 'border-champagne-300 bg-champagne-300/5'
                           : 'border-white/10 hover:border-white/25'
                       }`}
                     >
@@ -107,12 +107,12 @@ export default function PaymentPage() {
                         name="pm"
                         checked={selected === opt.id}
                         onChange={() => setSelected(opt.id)}
-                        className="mt-1 accent-gold-400"
+                        className="mt-1 accent-champagne-300"
                       />
                       <div className="flex-1">
                         <div className="flex items-baseline gap-3 flex-wrap">
                           <div className="font-serif text-xl">{opt.title}</div>
-                          <span className="text-[10px] uppercase tracking-widest text-gold-400/80 border border-gold-400/30 px-2 py-0.5">
+                          <span className="text-[10px] uppercase tracking-widest text-champagne-200/80 border border-champagne-300/30 px-2 py-0.5">
                             {opt.tag}
                           </span>
                         </div>
@@ -127,7 +127,7 @@ export default function PaymentPage() {
                             )}
                             {opt.id === 'wire' && (
                               <div>
-                                <p><strong className="text-white">How it works.</strong> Full bank wire instructions — receiving bank, ABA/SWIFT, account number, and reference code — will be emailed to <span className="text-gold-400">{info.email || 'your email'}</span> within 15 minutes of order confirmation.</p>
+                                <p><strong className="text-white">How it works.</strong> Full bank wire instructions — receiving bank, ABA/SWIFT, account number, and reference code — will be emailed to <span className="text-champagne-200">{info.email || 'your email'}</span> within 15 minutes of order confirmation.</p>
                                 <p className="mt-3"><strong className="text-white">Timing.</strong> Watches ship the same or next business day after wire clears (typically 1–2 business days domestic, 2–5 international). No wire fees on our end.</p>
                               </div>
                             )}
@@ -160,7 +160,7 @@ export default function PaymentPage() {
                     {info.country}
                   </div>
                 </div>
-                <Link href="/checkout" className="mt-4 inline-block text-xs uppercase tracking-widest text-gold-400 link-underline">
+                <Link href="/checkout" className="mt-4 inline-block text-xs uppercase tracking-widest text-champagne-200 link-underline">
                   Edit Address
                 </Link>
               </section>
@@ -172,10 +172,10 @@ export default function PaymentPage() {
                     type="checkbox"
                     checked={agree}
                     onChange={(e) => setAgree(e.target.checked)}
-                    className="mt-1 accent-gold-400"
+                    className="mt-1 accent-champagne-300"
                   />
                   <span className="text-sm text-white/70 leading-relaxed">
-                    I confirm my details are correct and I agree to the Amazing Time Pieces order terms, including the 7-day inspection window, authentication standard, and — for cash orders — federal reporting requirements.
+                    I confirm my details are correct and I agree to the Amazing Timepieces order terms, including the 7-day inspection window, authentication standard, and — for cash orders — federal reporting requirements.
                   </span>
                 </label>
               </section>
@@ -187,7 +187,7 @@ export default function PaymentPage() {
               )}
 
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                <Link href="/checkout" className="text-xs uppercase tracking-widest text-white/60 hover:text-gold-400">
+                <Link href="/checkout" className="text-xs uppercase tracking-widest text-white/60 hover:text-champagne-200">
                   ← Back to Details
                 </Link>
                 <button
@@ -200,7 +200,7 @@ export default function PaymentPage() {
               </div>
 
               <p className="text-xs text-white/50 text-center">
-                By placing this order you agree to our terms. Payment instructions will be emailed to <span className="text-gold-400">{info.email}</span> immediately.
+                By placing this order you agree to our terms. Payment instructions will be emailed to <span className="text-champagne-200">{info.email}</span> immediately.
               </p>
             </div>
 
@@ -214,26 +214,26 @@ export default function PaymentPage() {
                       <img src={i.image} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] uppercase tracking-widest text-gold-400/80">{i.brand}</div>
+                      <div className="text-[10px] uppercase tracking-widest text-champagne-200/80">{i.brand}</div>
                       <div className="text-sm font-serif truncate">{i.model}</div>
                       <div className="text-xs text-white/50">Ref. {i.reference}</div>
                     </div>
-                    <div className="text-sm text-gold-400 whitespace-nowrap">{formatPrice(i.price)}</div>
+                    <div className="text-sm text-champagne-200 whitespace-nowrap">{formatPrice(i.price)}</div>
                   </div>
                 ))}
               </div>
               <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-sm">
                 <div className="flex justify-between"><span className="text-white/60">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-gold-400">Complimentary</span></div>
+                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-champagne-200">Complimentary</span></div>
                 <div className="flex justify-between pt-3 border-t border-white/10 mt-3">
                   <span className="uppercase tracking-widest text-xs">Total Due</span>
-                  <span className="font-serif text-2xl text-gold-400">{formatPrice(subtotal)}</span>
+                  <span className="font-serif text-2xl text-champagne-200">{formatPrice(subtotal)}</span>
                 </div>
               </div>
               <div className="mt-8 space-y-3 text-xs text-white/50">
-                <div className="flex items-center gap-2"><span className="text-gold-400">✓</span> Fully insured worldwide delivery</div>
-                <div className="flex items-center gap-2"><span className="text-gold-400">✓</span> 7-day inspection window</div>
-                <div className="flex items-center gap-2"><span className="text-gold-400">✓</span> Authentication certificate included</div>
+                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> Fully insured worldwide delivery</div>
+                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> 7-day inspection window</div>
+                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> Authentication certificate included</div>
               </div>
             </aside>
           </div>

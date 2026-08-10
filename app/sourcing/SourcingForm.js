@@ -26,8 +26,8 @@ export default function SourcingForm() {
 
   if (status === 'done') {
     return (
-      <div className="bg-ink-900 border border-gold-400/30 p-10 sm:p-14 text-center">
-        <div className="text-gold-400 text-5xl">✓</div>
+      <div className="bg-ink-900 border border-champagne-300/30 p-10 sm:p-14 text-center">
+        <div className="text-champagne-200 text-5xl">✓</div>
         <h3 className="font-serif text-3xl mt-4">Request received.</h3>
         <p className="mt-4 text-white/70 max-w-md mx-auto leading-relaxed">
           A specialist will reach out within 48 hours with authenticated options that match your brief. Watch your email — including the spam folder, just in case.
@@ -88,16 +88,16 @@ export default function SourcingForm() {
       <style jsx>{`
         .ipt {
           width: 100%;
-          background: #0a0a0a;
+          background: #08080a;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 0.75rem 1rem;
+          padding: 0.875rem 1rem;
           color: #fff;
           font-size: 0.9rem;
-          transition: border-color 0.2s;
+          transition: border-color 0.3s;
         }
         .ipt:focus {
           outline: none;
-          border-color: #c9a227;
+          border-color: #dcbf72;
         }
       `}</style>
     </form>
@@ -108,7 +108,7 @@ function Field({ label, required, children, full }) {
   return (
     <label className={`block ${full ? 'md:col-span-2' : ''}`}>
       <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">
-        {label} {required && <span className="text-gold-400">*</span>}
+        {label} {required && <span className="text-champagne-200">*</span>}
       </span>
       {children}
     </label>

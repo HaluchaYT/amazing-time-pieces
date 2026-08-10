@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import { useCart } from './CartProvider';
 
 const NAV = [
-  { href: '/watches', label: 'Watches' },
+  { href: '/watches', label: 'The Collection' },
   { href: '/sourcing', label: 'Sourcing' },
   { href: '/blog', label: 'Journal' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'Maison' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -30,71 +30,101 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled || open ? 'bg-ink-950/95 backdrop-blur border-b border-white/5' : 'bg-transparent'
+      className={`sticky top-0 z-40 transition-all duration-500 ${
+        scrolled || open ? 'bg-ink-950/95 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
       }`}
     >
-      <div className="container-x flex items-center justify-between h-16 sm:h-20">
-        <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
-          <svg width="28" height="28" viewBox="0 0 32 32" className="text-gold-400 transition-transform group-hover:rotate-12">
-            <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <circle cx="16" cy="16" r="1.5" fill="currentColor" />
-            <line x1="16" y1="16" x2="16" y2="7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <line x1="16" y1="16" x2="22" y2="19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-          <div className="leading-tight">
-            <div className="font-serif text-lg tracking-wide">Amazing Time Pieces</div>
-            <div className="text-[9px] uppercase tracking-[0.3em] text-gold-400/80 hidden sm:block">
-              Curated Since 2014
-            </div>
-          </div>
-        </Link>
+      <div className="container-x">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Left nav (desktop) */}
+          <nav className="hidden lg:flex items-center gap-9 flex-1">
+            {NAV.slice(0, 3).map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="text-[11px] tracking-[0.3em] uppercase text-white/75 hover:text-champagne-200 transition-colors link-underline"
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
 
-        <nav className="hidden lg:flex items-center gap-9">
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="text-sm tracking-wider uppercase text-white/80 hover:text-gold-400 transition-colors link-underline"
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-4">
-          <Link
-            href="/cart"
-            aria-label="Cart"
-            className="relative text-white/80 hover:text-gold-400 transition-colors"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M6 7h12l-1.5 11a2 2 0 0 1-2 1.75h-5A2 2 0 0 1 7.5 18L6 7Z" strokeLinejoin="round"/>
-              <path d="M9 7V5a3 3 0 0 1 6 0v2" strokeLinecap="round"/>
+          {/* Brand — centered */}
+          <Link href="/" className="flex items-center gap-3 group lg:absolute lg:left-1/2 lg:-translate-x-1/2" onClick={() => setOpen(false)}>
+            <svg width="28" height="28" viewBox="0 0 32 32" className="text-champagne-300 transition-transform duration-700 group-hover:rotate-45">
+              <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" strokeWidth="1" />
+              <circle cx="16" cy="16" r="10.5" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
+              <circle cx="16" cy="16" r="1.2" fill="currentColor" />
+              <line x1="16" y1="16" x2="16" y2="7.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+              <line x1="16" y1="16" x2="21.5" y2="19" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+              <line x1="16" y1="2.5" x2="16" y2="4" stroke="currentColor" strokeWidth="1" />
+              <line x1="16" y1="28" x2="16" y2="29.5" stroke="currentColor" strokeWidth="1" />
+              <line x1="2.5" y1="16" x2="4" y2="16" stroke="currentColor" strokeWidth="1" />
+              <line x1="28" y1="16" x2="29.5" y2="16" stroke="currentColor" strokeWidth="1" />
             </svg>
-            {count > 0 && (
-              <span className="absolute -top-1.5 -right-2 bg-gold-400 text-ink-950 text-[10px] font-semibold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
-                {count}
-              </span>
-            )}
+            <div className="leading-none">
+              <div className="font-serif text-lg sm:text-xl tracking-wide">Amazing Timepieces</div>
+              <div className="text-[8px] uppercase tracking-[0.42em] text-champagne-300/70 mt-1 hidden sm:block">
+                Est. 2014 · New York
+              </div>
+            </div>
           </Link>
 
-          <button
-            className="lg:hidden text-white/90 p-1.5 -mr-1.5"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-            aria-expanded={open}
-          >
-            {open ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round"/>
+          {/* Right nav + actions */}
+          <div className="hidden lg:flex items-center gap-8 flex-1 justify-end">
+            {NAV.slice(3).map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="text-[11px] tracking-[0.3em] uppercase text-white/75 hover:text-champagne-200 transition-colors link-underline"
+              >
+                {n.label}
+              </Link>
+            ))}
+            <div className="h-4 w-px bg-white/10" />
+            <Link href="/cart" aria-label="Cart" className="relative text-white/80 hover:text-champagne-200 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
+                <path d="M6 7h12l-1.5 11a2 2 0 0 1-2 1.75h-5A2 2 0 0 1 7.5 18L6 7Z" strokeLinejoin="round" />
+                <path d="M9 7V5a3 3 0 0 1 6 0v2" strokeLinecap="round" />
               </svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round"/>
+              {count > 0 && (
+                <span className="absolute -top-2 -right-2.5 bg-champagne-300 text-ink-950 text-[10px] font-semibold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
+                  {count}
+                </span>
+              )}
+            </Link>
+          </div>
+
+          {/* Mobile actions */}
+          <div className="lg:hidden flex items-center gap-4">
+            <Link href="/cart" aria-label="Cart" className="relative text-white/80 hover:text-champagne-200 transition-colors">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <path d="M6 7h12l-1.5 11a2 2 0 0 1-2 1.75h-5A2 2 0 0 1 7.5 18L6 7Z" strokeLinejoin="round" />
+                <path d="M9 7V5a3 3 0 0 1 6 0v2" strokeLinecap="round" />
               </svg>
-            )}
-          </button>
+              {count > 0 && (
+                <span className="absolute -top-1.5 -right-2 bg-champagne-300 text-ink-950 text-[10px] font-semibold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
+                  {count}
+                </span>
+              )}
+            </Link>
+            <button
+              className="text-white/90 p-1.5 -mr-1.5"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
+              aria-expanded={open}
+            >
+              {open ? (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                  <path d="M18 6 6 18M6 6l12 12" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                  <path d="M3 7h18M3 12h18M3 17h18" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -106,19 +136,36 @@ export default function Header() {
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="py-4 border-b border-white/5 font-serif text-2xl text-white/90 hover:text-gold-400 transition-colors flex items-center justify-between"
+                className="py-4 border-b border-white/5 font-serif text-3xl text-white/90 hover:text-champagne-200 transition-colors flex items-center justify-between"
               >
                 {n.label}
-                <span className="text-gold-400 text-lg">→</span>
+                <span className="text-champagne-300 text-lg">→</span>
               </Link>
             ))}
-            <div className="mt-6 flex flex-col gap-3">
+            <div className="mt-8 flex flex-col gap-3">
               <Link href="/watches" onClick={() => setOpen(false)} className="btn-gold">
                 Browse Collection
               </Link>
               <Link href="/sourcing" onClick={() => setOpen(false)} className="btn-ghost">
                 Request Sourcing
               </Link>
+            </div>
+            <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-white/50">
+              <a href="tel:+18005551234" className="hover:text-champagne-200">+1 (800) 555-1234</a>
+              <div className="flex gap-4">
+                <a href="https://instagram.com" aria-label="Instagram" className="hover:text-champagne-200">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                    <rect x="3" y="3" width="18" height="18" rx="4" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                  </svg>
+                </a>
+                <a href="https://facebook.com" aria-label="Facebook" className="hover:text-champagne-200">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </nav>
         </div>

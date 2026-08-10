@@ -31,33 +31,37 @@ export default function WatchesPage() {
 
   return (
     <>
-      <section className="pt-32 sm:pt-40 pb-12 border-b border-white/5">
-        <div className="container-x">
-          <div className="text-xs uppercase tracking-widest text-white/50 mb-4">
-            <Link href="/" className="hover:text-gold-400 transition-colors">Home</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gold-400">Watches</span>
+      <section className="pt-24 sm:pt-32 pb-16 border-b border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-radial-fade opacity-40" />
+        <div className="relative container-x">
+          <div className="text-[10px] uppercase tracking-[0.4em] text-white/50 mb-6">
+            <Link href="/" className="hover:text-champagne-200 transition-colors">Home</Link>
+            <span className="mx-3 text-champagne-300/50">·</span>
+            <span className="text-champagne-200">The Collection</span>
           </div>
-          <div className="eyebrow">Current Inventory</div>
-          <h1 className="section-title mt-4">The Collection</h1>
-          <p className="mt-6 max-w-2xl text-white/70 leading-relaxed">
-            Every timepiece below has been physically inspected, authenticated, and photographed against our reference standard. Availability is live — if it is listed, it is available.
+          <div className="eyebrow">In Residence</div>
+          <h1 className="section-title-lg mt-6 text-balance">
+            The Collection.
+          </h1>
+          <div className="hairline-gold mt-8 w-16" />
+          <p className="mt-8 max-w-2xl text-white/70 leading-relaxed text-lg font-light">
+            Every timepiece below has been physically inspected, authenticated, and photographed against our reference standard. Availability is live — if it appears, it is available.
           </p>
         </div>
       </section>
 
-      <section className="sticky top-16 sm:top-20 z-30 bg-ink-950/95 backdrop-blur border-b border-white/5">
+      <section className="sticky top-16 sm:top-20 z-30 bg-ink-950/95 backdrop-blur-md border-b border-white/5">
         <div className="container-x py-4 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
           <div className="flex-1 flex gap-3 flex-wrap">
-            <div className="relative flex-1 min-w-[200px]">
+            <div className="relative flex-1 min-w-[220px]">
               <input
                 type="search"
-                placeholder="Search brand, model, reference..."
+                placeholder="Search brand, model, reference…"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full bg-ink-900 border border-white/10 pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-gold-400"
+                className="w-full bg-ink-900/80 border border-white/10 pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-champagne-300 transition-colors"
               />
-              <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="11" cy="11" r="7"/>
                 <path d="m20 20-3.5-3.5"/>
               </svg>
@@ -65,9 +69,9 @@ export default function WatchesPage() {
             <select
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
-              className="bg-ink-900 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 min-w-[140px]"
+              className="bg-ink-900/80 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-champagne-300 min-w-[160px]"
             >
-              <option>All</option>
+              <option>All Maisons</option>
               {brands.map((b) => (
                 <option key={b}>{b}</option>
               ))}
@@ -76,28 +80,32 @@ export default function WatchesPage() {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="bg-ink-900 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 min-w-[160px]"
+            className="bg-ink-900/80 border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-champagne-300 min-w-[180px]"
           >
-            <option value="featured">Sort: Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="year-desc">Year: Newest First</option>
+            <option value="featured">Sort — Curator's Order</option>
+            <option value="price-asc">Price — Low to High</option>
+            <option value="price-desc">Price — High to Low</option>
+            <option value="year-desc">Year — Newest First</option>
           </select>
         </div>
       </section>
 
-      <section className="py-14 sm:py-16">
+      <section className="py-16 sm:py-20">
         <div className="container-x">
-          <div className="mb-8 text-sm text-white/50">
-            Showing <span className="text-gold-400">{filtered.length}</span> of {watches.length} timepieces
+          <div className="mb-10 flex items-baseline justify-between border-b border-white/5 pb-6">
+            <div className="text-sm text-white/50">
+              Showing <span className="text-champagne-200">{filtered.length}</span> of {watches.length} timepieces
+            </div>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-white/40">Updated Daily</div>
           </div>
           {filtered.length === 0 ? (
-            <div className="py-24 text-center">
-              <p className="font-serif text-2xl text-white/70">Nothing matches those filters.</p>
-              <p className="mt-3 text-sm text-white/50">Try a different brand or clear your search.</p>
+            <div className="py-24 text-center max-w-md mx-auto">
+              <p className="font-serif text-3xl italic text-white/70">Nothing matches those criteria.</p>
+              <p className="mt-4 text-sm text-white/50">Try a different maison, clear your search, or request a sourcing for something specific.</p>
+              <Link href="/sourcing" className="btn-ghost mt-8 inline-flex">Begin a Sourcing</Link>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {filtered.map((w) => (
                 <WatchCard key={w.id} watch={w} />
               ))}
@@ -106,14 +114,18 @@ export default function WatchesPage() {
         </div>
       </section>
 
-      <section className="bg-ink-900 py-16 border-t border-white/5">
-        <div className="container-x text-center max-w-2xl mx-auto">
-          <div className="eyebrow">Can't Find It?</div>
-          <h2 className="font-serif text-3xl sm:text-4xl mt-4">Every reference. Somewhere.</h2>
-          <p className="mt-5 text-white/70 leading-relaxed">
-            Our sourcing service locates specific references worldwide — including watches never listed publicly. Response within 48 hours.
+      <section className="bg-black py-20 sm:py-28 border-t border-champagne-300/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-radial-fade opacity-50" />
+        <div className="relative container-narrow text-center">
+          <div className="eyebrow">Not Listed?</div>
+          <h2 className="section-title mt-6 text-balance">
+            Every reference. <span className="italic text-champagne-200">Somewhere.</span>
+          </h2>
+          <div className="hairline-gold mt-6 mx-auto w-16" />
+          <p className="mt-8 text-white/70 leading-relaxed max-w-xl mx-auto">
+            Our sourcing service locates specific references worldwide — including watches never listed publicly. Response within forty-eight hours.
           </p>
-          <Link href="/sourcing" className="btn-gold mt-8 inline-flex">Start a Sourcing Request</Link>
+          <Link href="/sourcing" className="btn-gold mt-10 inline-flex">Begin a Sourcing Request</Link>
         </div>
       </section>
     </>

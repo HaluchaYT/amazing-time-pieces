@@ -32,42 +32,46 @@ export default function BlogPostPage({ params }) {
   return (
     <>
       <article>
-        <header className="pt-32 sm:pt-40 pb-8">
-          <div className="container-x max-w-3xl">
-            <div className="text-xs uppercase tracking-widest text-white/50 mb-4">
-              <Link href="/" className="hover:text-gold-400">Home</Link>
-              <span className="mx-2">/</span>
-              <Link href="/blog" className="hover:text-gold-400">Journal</Link>
-              <span className="mx-2">/</span>
-              <span className="text-gold-400">{post.category}</span>
+        <header className="pt-24 sm:pt-32 pb-10">
+          <div className="container-narrow max-w-3xl">
+            <div className="text-[10px] uppercase tracking-[0.4em] text-white/50 mb-6">
+              <Link href="/" className="hover:text-champagne-200">Home</Link>
+              <span className="mx-3 text-champagne-300/50">·</span>
+              <Link href="/blog" className="hover:text-champagne-200">Journal</Link>
+              <span className="mx-3 text-champagne-300/50">·</span>
+              <span className="text-champagne-200">{post.category}</span>
             </div>
             <div className="eyebrow">{post.category} · {post.readTime}</div>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-5 leading-tight">{post.title}</h1>
-            <div className="mt-8 flex items-center gap-4 text-sm text-white/60">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-6 leading-[1.05] text-balance">{post.title}</h1>
+            <div className="hairline-gold mt-8 w-16" />
+            <div className="mt-8 flex items-center gap-4 text-sm text-white/60 italic font-serif">
               <span>{post.author}</span>
-              <span>·</span>
+              <span className="text-champagne-300/50">·</span>
               <time>{date}</time>
             </div>
           </div>
         </header>
 
-        <div className="container-x max-w-4xl">
-          <div className="aspect-[16/9] overflow-hidden bg-ink-900">
+        <div className="container-x max-w-5xl">
+          <div className="editorial-frame aspect-[16/9] overflow-hidden bg-ink-900">
             <img src={post.cover} alt={post.title} className="w-full h-full object-cover" />
           </div>
         </div>
 
-        <div className="container-x max-w-3xl py-12 sm:py-16">
-          <div className="prose-content space-y-6 text-lg text-white/80 leading-relaxed">
+        <div className="container-narrow max-w-3xl py-16 sm:py-20">
+          <div className="prose-content space-y-8 text-lg text-white/80 leading-[1.9] font-light">
             {post.content.map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={i} className={i === 0 ? 'first-letter:font-serif first-letter:text-6xl first-letter:font-normal first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-champagne-200' : ''}>
+                {para}
+              </p>
             ))}
           </div>
 
-          <div className="mt-14 pt-8 border-t border-white/10">
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <div className="eyebrow mb-4">Filed Under</div>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((t) => (
-                <span key={t} className="text-[10px] uppercase tracking-widest border border-white/15 text-white/70 px-3 py-1">
+                <span key={t} className="text-[10px] uppercase tracking-[0.35em] border border-champagne-300/25 text-white/70 px-3 py-1.5">
                   {t}
                 </span>
               ))}
@@ -76,26 +80,24 @@ export default function BlogPostPage({ params }) {
         </div>
       </article>
 
-      <section className="py-16 border-t border-white/5 bg-ink-900">
+      <section className="py-20 sm:py-28 border-t border-champagne-300/10 bg-black">
         <div className="container-x">
-          <div className="eyebrow">Keep Reading</div>
-          <h2 className="font-serif text-3xl mt-4 mb-10">More from the Journal</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="eyebrow">Continue Reading</div>
+          <h2 className="font-serif text-3xl sm:text-4xl mt-4 mb-12">More from the Journal</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {related.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="group block bg-ink-950 border border-white/5 hover:border-gold-400/30 transition-all"
+                className="group block"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={p.cover} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="aspect-[4/5] overflow-hidden bg-ink-900 mb-5">
+                  <img src={p.cover} alt={p.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
-                <div className="p-5">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold-400 mb-2">
-                    {p.category}
-                  </div>
-                  <h3 className="font-serif text-lg leading-tight group-hover:text-gold-300 transition-colors">{p.title}</h3>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-champagne-300 mb-2">
+                  {p.category}
                 </div>
+                <h3 className="font-serif text-xl leading-tight group-hover:text-champagne-200 transition-colors text-balance">{p.title}</h3>
               </Link>
             ))}
           </div>

@@ -28,37 +28,42 @@ export default function WatchDetail({ watch, related }) {
 
   const specs = [
     { l: 'Reference', v: watch.reference },
-    { l: 'Year', v: watch.year },
+    { l: 'Year of Production', v: watch.year },
     { l: 'Condition', v: watch.condition },
     { l: 'Case', v: `${watch.caseSize} · ${watch.caseMaterial}` },
     { l: 'Dial', v: watch.dial },
     { l: 'Movement', v: watch.movement },
-    { l: 'Bracelet', v: watch.bracelet },
-    { l: 'Box & Papers', v: `${watch.box ? 'Yes' : 'No'} · ${watch.papers ? 'Yes' : 'No'}` },
+    { l: 'Bracelet / Strap', v: watch.bracelet },
+    { l: 'Box & Papers', v: `${watch.box ? 'Included' : 'None'} · ${watch.papers ? 'Included' : 'None'}` },
   ];
 
   return (
     <>
-      <div className="pt-24 sm:pt-28 pb-4 container-x">
-        <div className="text-xs uppercase tracking-widest text-white/50">
-          <Link href="/" className="hover:text-gold-400 transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/watches" className="hover:text-gold-400 transition-colors">Watches</Link>
-          <span className="mx-2">/</span>
-          <span className="text-gold-400">{watch.brand}</span>
+      <div className="pt-20 sm:pt-24 pb-4 container-x">
+        <div className="text-[10px] uppercase tracking-[0.4em] text-white/50">
+          <Link href="/" className="hover:text-champagne-200 transition-colors">Home</Link>
+          <span className="mx-3 text-champagne-300/50">·</span>
+          <Link href="/watches" className="hover:text-champagne-200 transition-colors">Collection</Link>
+          <span className="mx-3 text-champagne-300/50">·</span>
+          <span className="text-champagne-200">{watch.brand}</span>
         </div>
       </div>
 
       <section className="py-8 sm:py-12">
-        <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="container-x grid lg:grid-cols-2 gap-10 lg:gap-20">
           {/* GALLERY */}
-          <div>
-            <div className="relative aspect-square bg-ink-900 border border-white/5 overflow-hidden">
+          <div className="lg:sticky lg:top-24 self-start">
+            <div className="editorial-frame relative aspect-square bg-ink-900 overflow-hidden">
               <img
                 src={images[activeImg]}
                 alt={`${watch.brand} ${watch.model}`}
                 className="w-full h-full object-cover"
               />
+              {watch.condition?.toLowerCase().includes('unworn') && (
+                <span className="absolute top-6 left-6 bg-ink-950/70 backdrop-blur-sm text-champagne-200 text-[9px] uppercase tracking-[0.35em] px-3 py-1.5 border border-champagne-300/30 z-10">
+                  Unworn
+                </span>
+              )}
             </div>
             {images.length > 1 && (
               <div className="mt-4 grid grid-cols-4 gap-3">
@@ -67,7 +72,7 @@ export default function WatchDetail({ watch, related }) {
                     key={idx}
                     onClick={() => setActiveImg(idx)}
                     className={`aspect-square bg-ink-900 border overflow-hidden transition-all ${
-                      activeImg === idx ? 'border-gold-400' : 'border-white/10 hover:border-white/30'
+                      activeImg === idx ? 'border-champagne-300' : 'border-white/10 hover:border-white/30'
                     }`}
                   >
                     <img src={img} alt="" className="w-full h-full object-cover" />
@@ -79,82 +84,84 @@ export default function WatchDetail({ watch, related }) {
 
           {/* DETAILS */}
           <div>
-            <div className="text-xs uppercase tracking-[0.3em] text-gold-400/80">{watch.brand}</div>
-            <h1 className="font-serif text-4xl sm:text-5xl mt-3 leading-tight">{watch.model}</h1>
-            <div className="mt-3 text-white/60">Reference {watch.reference} · {watch.year}</div>
-            <span className="hairline mt-6" />
+            <div className="text-[10px] uppercase tracking-[0.4em] text-champagne-300/90">{watch.brand}</div>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-4 leading-[1.05] text-balance">{watch.model}</h1>
+            <div className="mt-4 text-white/60 italic font-serif">Reference {watch.reference} · {watch.year}</div>
+            <div className="hairline-gold mt-8 w-16" />
 
-            <div className="mt-8 flex items-baseline gap-4">
-              <div className="font-serif text-4xl sm:text-5xl text-gold-400">{formatPrice(watch.price)}</div>
-              <span className="text-xs uppercase tracking-widest text-white/50">USD</span>
+            <div className="mt-10 flex items-baseline gap-4">
+              <div className="font-serif text-5xl sm:text-6xl text-champagne-200">{formatPrice(watch.price)}</div>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-white/50">USD</span>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
               {watch.tags?.map((t) => (
-                <span key={t} className="text-[10px] uppercase tracking-widest border border-white/15 text-white/70 px-3 py-1">
+                <span key={t} className="text-[9px] uppercase tracking-[0.35em] border border-champagne-300/25 text-white/70 px-3 py-1.5">
                   {t}
                 </span>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <button onClick={handleBuyNow} className="btn-gold flex-1">Buy Now — Secure Checkout</button>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <button onClick={handleBuyNow} className="btn-gold flex-1">
+                <span>Secure This Piece</span>
+              </button>
               <button
                 onClick={handleAdd}
                 disabled={inCart}
                 className="btn-ghost flex-1 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {added ? 'Added ✓' : inCart ? 'In Cart' : 'Add to Cart'}
+                {added ? 'Added ✓' : inCart ? 'In Cart' : 'Reserve in Cart'}
               </button>
             </div>
 
-            <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-8 grid grid-cols-3 gap-3 text-center">
               {[
-                { i: '🛡', l: 'Authenticated' },
+                { i: '◈', l: 'Authenticated' },
                 { i: '✈', l: 'Insured Ship' },
                 { i: '↺', l: '7-Day Return' },
               ].map((t) => (
-                <div key={t.l} className="bg-ink-900 border border-white/5 py-4">
-                  <div className="text-gold-400 text-xl">{t.i}</div>
-                  <div className="text-[10px] uppercase tracking-widest text-white/60 mt-1">{t.l}</div>
+                <div key={t.l} className="bg-ink-900/60 border border-white/5 py-5">
+                  <div className="text-champagne-200 text-xl">{t.i}</div>
+                  <div className="text-[9px] uppercase tracking-[0.35em] text-white/60 mt-2">{t.l}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10">
-              <h2 className="eyebrow">Overview</h2>
-              <p className="mt-4 text-white/75 leading-relaxed">{watch.description}</p>
+            <div className="mt-14">
+              <div className="eyebrow">Overview</div>
+              <p className="mt-5 text-white/80 leading-relaxed text-lg font-light">{watch.description}</p>
             </div>
 
-            <div className="mt-10 border-t border-white/10 pt-6">
-              <h2 className="eyebrow">Specifications</h2>
-              <dl className="mt-5 divide-y divide-white/5">
+            <div className="mt-14 border-t border-white/10 pt-8">
+              <div className="eyebrow">Specifications</div>
+              <dl className="mt-6 divide-y divide-white/5">
                 {specs.map((s) => (
-                  <div key={s.l} className="py-3 flex justify-between gap-6">
-                    <dt className="text-sm text-white/50">{s.l}</dt>
-                    <dd className="text-sm text-right">{s.v}</dd>
+                  <div key={s.l} className="py-4 flex justify-between gap-6">
+                    <dt className="text-sm text-white/50 uppercase tracking-widest text-[10px]">{s.l}</dt>
+                    <dd className="text-sm text-right font-serif">{s.v}</dd>
                   </div>
                 ))}
               </dl>
             </div>
 
-            <div className="mt-10 p-6 bg-ink-900 border border-gold-400/20">
-              <h3 className="font-serif text-xl">Payment options</h3>
-              <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                At checkout, choose to pay by <span className="text-gold-400">cash</span> on secure delivery, <span className="text-gold-400">bank wire</span>, or <span className="text-gold-400">Zelle</span>. Full instructions provided after your details are confirmed.
+            <div className="mt-12 p-8 bg-gradient-to-br from-ink-900 to-black border border-champagne-300/25">
+              <div className="eyebrow">Payment Options</div>
+              <h3 className="font-serif text-2xl mt-3">At your discretion.</h3>
+              <p className="mt-4 text-sm text-white/70 leading-relaxed">
+                At checkout, settle by <span className="text-champagne-200">cash on secure delivery</span>, <span className="text-champagne-200">bank wire</span>, or <span className="text-champagne-200">Zelle</span>. Full instructions provided after your details are confirmed.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* RELATED */}
       {related.length > 0 && (
-        <section className="py-16 border-t border-white/5">
+        <section className="py-20 sm:py-28 border-t border-white/5 bg-ink-900/30">
           <div className="container-x">
-            <div className="eyebrow">Also in the Collection</div>
-            <h2 className="font-serif text-3xl sm:text-4xl mt-4 mb-10">You may also like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="eyebrow">Also in Residence</div>
+            <h2 className="font-serif text-3xl sm:text-4xl mt-4 mb-12">You may also consider</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {related.map((w) => (
                 <WatchCard key={w.id} watch={w} />
               ))}
