@@ -22,8 +22,8 @@ export default function TopBar() {
           </div>
 
           <div className="hidden md:flex items-center gap-5 pl-6 flex-shrink-0 border-l border-bone-100/15">
-            <a href="tel:+18005551234" className="hover:text-oxblood-300 transition-colors">
-              +1 (800) 555-1234
+            <a href="tel:+16503465605" className="hover:text-oxblood-300 transition-colors">
+              +1 (650) 346-5605
             </a>
             <a href="https://instagram.com" aria-label="Instagram" className="hover:text-oxblood-300 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

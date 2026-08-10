@@ -74,13 +74,13 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-bone-100/70">
               <li className="text-oxblood-300">Call for store hours</li>
               <li>
-                <a href="tel:+18005551234" className="hover:text-oxblood-300 transition-colors">
-                  +1 (800) 555-1234
+                <a href="tel:+16503465605" className="hover:text-oxblood-300 transition-colors">
+                  +1 (650) 346-5605
                 </a>
               </li>
               <li>
-                <a href="mailto:concierge@amazingtimepieces.com" className="hover:text-oxblood-300 transition-colors break-all">
-                  concierge@amazingtimepieces.com
+                <a href="mailto:getyours@amazingtimepieces.com" className="hover:text-oxblood-300 transition-colors break-all">
+                  getyours@amazingtimepieces.com
                 </a>
               </li>
               <li className="text-bone-100/50 text-xs mt-4">

@@ -197,10 +197,10 @@ export default function ConfirmationPage() {
 
           <div className="mt-16 text-center text-xs text-ink-300">
             Questions? Reach us at{' '}
-            <a href="mailto:concierge@amazingtimepieces.com" className="text-oxblood-600 hover:underline">
-              concierge@amazingtimepieces.com
+            <a href="mailto:getyours@amazingtimepieces.com" className="text-oxblood-600 hover:underline">
+              getyours@amazingtimepieces.com
             </a>{' '}
-            · +1 (800) 555-1234
+            · +1 (650) 346-5605
           </div>
         </div>
       </section>

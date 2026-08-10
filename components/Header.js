@@ -154,7 +154,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="mt-10 pt-6 border-t border-ink-100 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-ink-400">
-              <a href="tel:+18005551234" className="hover:text-oxblood-600">+1 (800) 555-1234</a>
+              <a href="tel:+16503465605" className="hover:text-oxblood-600">+1 (650) 346-5605</a>
               <div className="flex gap-4">
                 <a href="https://instagram.com" aria-label="Instagram" className="hover:text-oxblood-600">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">

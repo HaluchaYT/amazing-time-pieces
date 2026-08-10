@@ -33,14 +33,14 @@ export default function ContactPage() {
           <aside className="lg:col-span-1 space-y-4">
             <div className="bg-bone-50 border border-ink-100 p-7 hover:border-oxblood-600/40 transition-all duration-500">
               <div className="eyebrow">Email</div>
-              <a href="mailto:concierge@amazingtimepieces.com" className="font-serif text-lg text-ink-800 hover:text-oxblood-600 transition-colors break-all block mt-3">
-                concierge@amazingtimepieces.com
+              <a href="mailto:getyours@amazingtimepieces.com" className="font-serif text-lg text-ink-800 hover:text-oxblood-600 transition-colors break-all block mt-3">
+                getyours@amazingtimepieces.com
               </a>
             </div>
             <div className="bg-bone-50 border border-ink-100 p-7 hover:border-oxblood-600/40 transition-all duration-500">
               <div className="eyebrow">Telephone</div>
-              <a href="tel:+18005551234" className="font-serif text-2xl text-ink-800 hover:text-oxblood-600 transition-colors block mt-3">
-                +1 (800) 555-1234
+              <a href="tel:+16503465605" className="font-serif text-2xl text-ink-800 hover:text-oxblood-600 transition-colors block mt-3">
+                +1 (650) 346-5605
               </a>
               <p className="mt-3 text-xs italic text-ink-400 font-serif">Call for store hours</p>
             </div>
