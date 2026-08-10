@@ -98,7 +98,7 @@ export default function SourcingForm() {
         .ipt::placeholder { color: #8a8172; }
         .ipt:focus {
           outline: none;
-          border-color: #8b1e2d;
+          border-color: #5a1020;
         }
       `}</style>
     </form>

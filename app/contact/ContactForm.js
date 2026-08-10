@@ -67,7 +67,7 @@ export default function ContactForm() {
           transition: border-color 0.3s;
         }
         .ipt::placeholder { color: #8a8172; }
-        .ipt:focus { outline: none; border-color: #8b1e2d; }
+        .ipt:focus { outline: none; border-color: #5a1020; }
       `}</style>
     </form>
   );

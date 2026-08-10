@@ -70,7 +70,7 @@ export default function ConfirmationPage() {
           {/* HERO CONFIRMATION */}
           <div className="bg-gradient-to-br from-bone-50 to-bone-100 border border-oxblood-600/40 p-8 sm:p-12 text-center">
             <div className="w-16 h-16 mx-auto rounded-full bg-oxblood-600/15 border border-oxblood-600/40 flex items-center justify-center">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b1e2d" strokeWidth="2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5a1020" strokeWidth="2">
                 <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>

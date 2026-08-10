@@ -30,18 +30,18 @@ module.exports = {
           900: '#0a0908',
           950: '#050403',
         },
-        // Cartier-inspired oxblood — the red the owner asked for
+        // Bordeaux — deep, dark burgundy red
         oxblood: {
-          50:  '#fcf3f3',
-          100: '#f8e2e4',
-          200: '#efb9be',
-          300: '#e28b93',
-          400: '#c94a58',
-          500: '#a92535',
-          600: '#8b1e2d',
-          700: '#701623',
-          800: '#5a1220',
-          900: '#48101c',
+          50:  '#faeeef',
+          100: '#f2d3d6',
+          200: '#e0a1a8',
+          300: '#c86b76',
+          400: '#a3374a',
+          500: '#7a1a2b',
+          600: '#5a1020',   // primary — deep bordeaux
+          700: '#440b19',
+          800: '#320813',
+          900: '#22050d',
         },
         // Champagne — kept as secondary metal accent
         champagne: {
@@ -64,13 +64,13 @@ module.exports = {
         'widest-2': '0.42em',
       },
       boxShadow: {
-        'oxblood-glow': '0 20px 40px -20px rgba(139,30,45,0.35)',
-        'inner-hair': 'inset 0 0 0 1px rgba(139,30,45,0.12)',
+        'oxblood-glow': '0 20px 40px -20px rgba(90,16,32,0.35)',
+        'inner-hair': 'inset 0 0 0 1px rgba(90,16,32,0.12)',
         'card': '0 30px 60px -30px rgba(20,18,16,0.15)',
       },
       backgroundImage: {
-        'radial-fade': 'radial-gradient(ellipse at top, rgba(139,30,45,0.05), transparent 60%)',
-        'gold-line': 'linear-gradient(90deg, transparent, rgba(139,30,45,0.5), transparent)',
+        'radial-fade': 'radial-gradient(ellipse at top, rgba(90,16,32,0.05), transparent 60%)',
+        'gold-line': 'linear-gradient(90deg, transparent, rgba(90,16,32,0.5), transparent)',
       },
     },
   },
