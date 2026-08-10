@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #f5f1e8;
+  --accent: #c9a227;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, .serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.container-x {
+  @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center px-7 py-3.5 bg-gold-400 text-ink-950 font-medium tracking-wider uppercase text-xs transition-all hover:bg-gold-300 hover:shadow-gold-glow;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-7 py-3.5 border border-gold-400/60 text-gold-300 font-medium tracking-wider uppercase text-xs transition-all hover:bg-gold-400 hover:text-ink-950;
+}
+
+.link-underline {
+  @apply relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold-400 after:transition-all hover:after:w-full;
+}
+
+.eyebrow {
+  @apply uppercase tracking-[0.35em] text-xs text-gold-400 font-medium;
+}
+
+.section-title {
+  @apply font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight;
+}
+
+.hairline {
+  @apply block h-px w-16 bg-gold-400;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a227;
+}
+
+/* Ken Burns for hero */
+@keyframes kenburns {
+  0% { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-1%, -1%); }
+}
+.animate-kenburns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp {
+  animation: fadeUp 0.9s ease-out both;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
