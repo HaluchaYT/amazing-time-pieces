@@ -4,7 +4,7 @@ import { posts } from '@/lib/blog';
 export default function sitemap() {
   const base = 'https://amazingtimepieces.com';
   const now = new Date();
-  const staticRoutes = ['', '/watches', '/sourcing', '/blog', '/about', '/contact', '/cart', '/checkout'];
+  const staticRoutes = ['', '/watches', '/sourcing', '/blog', '/reviews', '/about', '/contact', '/cart', '/checkout'];
 
   const routes = staticRoutes.map((r) => ({
     url: `${base}${r}`,

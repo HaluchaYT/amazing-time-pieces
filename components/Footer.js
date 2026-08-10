@@ -53,6 +53,7 @@ export default function Footer() {
               <li><Link href="/watches" className="hover:text-oxblood-300 transition-colors">The Collection</Link></li>
               <li><Link href="/sourcing" className="hover:text-oxblood-300 transition-colors">Watch Sourcing</Link></li>
               <li><Link href="/blog" className="hover:text-oxblood-300 transition-colors">The Journal</Link></li>
+              <li><Link href="/reviews" className="hover:text-oxblood-300 transition-colors">Reviews</Link></li>
               <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Maison</Link></li>
             </ul>
           </div>

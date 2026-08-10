@@ -8,6 +8,7 @@ const NAV = [
   { href: '/watches', label: 'The Collection' },
   { href: '/sourcing', label: 'Sourcing' },
   { href: '/blog', label: 'Journal' },
+  { href: '/reviews', label: 'Reviews' },
   { href: '/about', label: 'Maison' },
   { href: '/contact', label: 'Contact' },
 ];
