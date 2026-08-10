@@ -17,22 +17,22 @@ export default function SourcingPage() {
             alt=""
             className="w-full h-full object-cover opacity-25 animate-kenburns"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/85 to-ink-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-bone-100 via-bone-100/85 to-bone-100" />
         </div>
         <div className="relative container-x">
-          <div className="text-[10px] uppercase tracking-[0.4em] text-white/50 mb-6">
-            <Link href="/" className="hover:text-champagne-200">Home</Link>
-            <span className="mx-3 text-champagne-300/50">·</span>
-            <span className="text-champagne-200">Sourcing</span>
+          <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
+            <Link href="/" className="hover:text-oxblood-600">Home</Link>
+            <span className="mx-3 text-oxblood-600/50">·</span>
+            <span className="text-oxblood-600">Sourcing</span>
           </div>
           <div className="max-w-3xl">
             <div className="eyebrow">Private Concierge</div>
             <h1 className="section-title-lg mt-6 text-balance">
               The watch you cannot find.
-              <span className="block font-serif italic text-champagne-200 mt-2">Located.</span>
+              <span className="block font-serif italic text-oxblood-600 mt-2">Located.</span>
             </h1>
             <div className="hairline-gold mt-8 w-16" />
-            <p className="mt-10 text-lg sm:text-xl text-white/75 leading-relaxed max-w-2xl font-light">
+            <p className="mt-10 text-lg sm:text-xl text-ink-600 leading-relaxed max-w-2xl font-light">
               Discontinued references. Waitlisted allocations. Grail-tier pieces that never touch a boutique display. Give us the brief — we return with authenticated options, typically within forty-eight hours.
             </p>
             <div className="mt-12">
@@ -42,7 +42,7 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 border-y border-champagne-300/10 bg-black">
+      <section className="py-20 sm:py-28 border-y border-oxblood-600/15 bg-bone-100">
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="eyebrow">The Process</div>
@@ -56,11 +56,11 @@ export default function SourcingPage() {
               { n: 'III', t: 'The Inspection', d: 'Every candidate is physically inspected against our forty-point standard before it reaches you.' },
               { n: 'IV', t: 'The Delivery', d: 'Fully insured, tracked, signed. Settle by cash, wire, or Zelle — at your preference.' },
             ].map((s) => (
-              <div key={s.n} className="p-8 bg-ink-900 border border-white/5 hover:border-champagne-300/30 transition-all duration-500 group">
-                <div className="font-serif text-5xl text-champagne-200 group-hover:text-champagne-300 transition-colors">{s.n}</div>
+              <div key={s.n} className="p-8 bg-bone-50 border border-ink-100 hover:border-oxblood-600/40 transition-all duration-500 group">
+                <div className="font-serif text-5xl text-oxblood-600 group-hover:text-oxblood-600 transition-colors">{s.n}</div>
                 <div className="hairline-gold my-5 w-8" />
                 <div className="font-serif text-2xl">{s.t}</div>
-                <p className="mt-4 text-sm text-white/60 leading-relaxed">{s.d}</p>
+                <p className="mt-4 text-sm text-ink-500 leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -72,10 +72,10 @@ export default function SourcingPage() {
           <div>
             <div className="eyebrow">What We Source</div>
             <h2 className="section-title mt-6 text-balance">
-              The full spectrum <span className="italic text-champagne-200">of the market.</span>
+              The full spectrum <span className="italic text-oxblood-600">of the market.</span>
             </h2>
             <div className="hairline-gold mt-6 w-16" />
-            <p className="mt-8 text-white/75 leading-relaxed text-lg">
+            <p className="mt-8 text-ink-600 leading-relaxed text-lg">
               Modern production, discontinued, vintage — if it exists, someone in our network can find it. Below is a snapshot of what our clients have requested this quarter.
             </p>
             <ul className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm">
@@ -89,9 +89,9 @@ export default function SourcingPage() {
                 'Vintage Rolex (1950s–70s)',
                 'Independent watchmaking',
               ].map((l) => (
-                <li key={l} className="flex items-start gap-3 py-2 border-b border-white/5">
-                  <span className="text-champagne-300 mt-1 text-[10px]">◆</span>
-                  <span className="text-white/80 font-serif italic">{l}</span>
+                <li key={l} className="flex items-start gap-3 py-2 border-b border-ink-100">
+                  <span className="text-oxblood-600 mt-1 text-[10px]">◆</span>
+                  <span className="text-ink-700 font-serif italic">{l}</span>
                 </li>
               ))}
             </ul>
@@ -106,14 +106,14 @@ export default function SourcingPage() {
         </div>
       </section>
 
-      <section id="request" className="py-20 sm:py-28 border-t border-champagne-300/10 bg-black relative overflow-hidden">
+      <section id="request" className="py-20 sm:py-28 border-t border-oxblood-600/15 bg-bone-100 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-50" />
         <div className="relative container-narrow max-w-3xl">
           <div className="text-center mb-12">
             <div className="eyebrow">Submit a Request</div>
             <h2 className="section-title mt-6">Tell us the piece.</h2>
             <div className="hairline-gold mt-6 mx-auto w-16" />
-            <p className="mt-6 text-white/70">A specialist responds within forty-eight hours.</p>
+            <p className="mt-6 text-ink-600">A specialist responds within forty-eight hours.</p>
           </div>
           <SourcingForm />
         </div>

@@ -15,31 +15,31 @@ export default function ContactForm() {
 
   if (status === 'done') {
     return (
-      <div className="bg-ink-900 border border-champagne-300/30 p-10 text-center">
-        <div className="text-champagne-200 text-5xl">✓</div>
+      <div className="bg-bone-50 border border-oxblood-600/40 p-10 text-center">
+        <div className="text-oxblood-600 text-5xl">✓</div>
         <h3 className="font-serif text-3xl mt-4">Message sent.</h3>
-        <p className="mt-3 text-white/70">A specialist will respond within one business day.</p>
+        <p className="mt-3 text-ink-600">A specialist will respond within one business day.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-ink-900 border border-white/10 p-6 sm:p-10 space-y-5">
+    <form onSubmit={handleSubmit} className="bg-bone-50 border border-ink-100 p-6 sm:p-10 space-y-5">
       <div className="grid md:grid-cols-2 gap-5">
         <label className="block">
-          <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">Name *</span>
+          <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Name *</span>
           <input required value={form.name} onChange={(e) => set('name', e.target.value)} className="ipt" />
         </label>
         <label className="block">
-          <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">Email *</span>
+          <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Email *</span>
           <input type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} className="ipt" />
         </label>
         <label className="block">
-          <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">Phone</span>
+          <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Phone</span>
           <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} className="ipt" />
         </label>
         <label className="block">
-          <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">Subject</span>
+          <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Subject</span>
           <select value={form.subject} onChange={(e) => set('subject', e.target.value)} className="ipt">
             <option>General Enquiry</option>
             <option>About a Specific Watch</option>
@@ -50,7 +50,7 @@ export default function ContactForm() {
         </label>
       </div>
       <label className="block">
-        <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">Message *</span>
+        <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Message *</span>
         <textarea required rows={5} value={form.message} onChange={(e) => set('message', e.target.value)} className="ipt resize-y" />
       </label>
       <button className="btn-gold w-full" disabled={status === 'sending'}>
@@ -59,14 +59,15 @@ export default function ContactForm() {
       <style jsx>{`
         .ipt {
           width: 100%;
-          background: #08080a;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #fdfaf3;
+          border: 1px solid rgba(20, 18, 16, 0.15);
           padding: 0.875rem 1rem;
-          color: #fff;
+          color: #141210;
           font-size: 0.9rem;
           transition: border-color 0.3s;
         }
-        .ipt:focus { outline: none; border-color: #dcbf72; }
+        .ipt::placeholder { color: #8a8172; }
+        .ipt:focus { outline: none; border-color: #8b1e2d; }
       `}</style>
     </form>
   );

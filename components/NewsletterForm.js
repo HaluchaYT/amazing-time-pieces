@@ -25,9 +25,9 @@ export default function NewsletterForm() {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 bg-ink-950 border border-white/10 px-5 py-3.5 text-white placeholder:text-white/40 focus:outline-none focus:border-champagne-300 transition-colors"
+        className="flex-1 bg-ink-700 border border-bone-100/20 px-5 py-3.5 text-bone-50 placeholder:text-bone-100/40 focus:outline-none focus:border-oxblood-400 transition-colors"
       />
-      <button className="btn-gold whitespace-nowrap" disabled={status === 'sending'}>
+      <button className="btn-oxblood whitespace-nowrap" disabled={status === 'sending'}>
         {status === 'done' ? 'You’re In ✓' : status === 'sending' ? 'Joining…' : 'Join the List'}
       </button>
     </form>

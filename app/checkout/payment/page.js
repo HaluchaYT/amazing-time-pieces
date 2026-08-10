@@ -68,7 +68,7 @@ export default function PaymentPage() {
   };
 
   if (!hydrated || !cartHydrated) {
-    return <div className="pt-40 text-center text-white/50">Loading…</div>;
+    return <div className="pt-40 text-center text-ink-400">Loading…</div>;
   }
 
   return (
@@ -82,7 +82,7 @@ export default function PaymentPage() {
           <div className="mb-8">
             <div className="eyebrow">Step 3 of 4</div>
             <h1 className="font-serif text-4xl sm:text-5xl mt-3">Payment Method</h1>
-            <p className="mt-4 text-white/60 max-w-xl">
+            <p className="mt-4 text-ink-500 max-w-xl">
               Choose how you'd like to settle. Once your order is placed, we'll email full payment instructions and a shipping confirmation.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function PaymentPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
               {/* PAYMENT OPTIONS */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl mb-6">Select Payment</h2>
                 <div className="space-y-3">
                   {OPTIONS.map((opt) => (
@@ -98,8 +98,8 @@ export default function PaymentPage() {
                       key={opt.id}
                       className={`flex items-start gap-4 p-4 sm:p-5 border cursor-pointer transition-all ${
                         selected === opt.id
-                          ? 'border-champagne-300 bg-champagne-300/5'
-                          : 'border-white/10 hover:border-white/25'
+                          ? 'border-oxblood-600 bg-oxblood-600/5'
+                          : 'border-ink-100 hover:border-ink-200'
                       }`}
                     >
                       <input
@@ -107,34 +107,34 @@ export default function PaymentPage() {
                         name="pm"
                         checked={selected === opt.id}
                         onChange={() => setSelected(opt.id)}
-                        className="mt-1 accent-champagne-300"
+                        className="mt-1 accent-oxblood-600"
                       />
                       <div className="flex-1">
                         <div className="flex items-baseline gap-3 flex-wrap">
                           <div className="font-serif text-xl">{opt.title}</div>
-                          <span className="text-[10px] uppercase tracking-widest text-champagne-200/80 border border-champagne-300/30 px-2 py-0.5">
+                          <span className="text-[10px] uppercase tracking-widest text-oxblood-600 border border-oxblood-600/40 px-2 py-0.5">
                             {opt.tag}
                           </span>
                         </div>
-                        <div className="text-sm text-white/60 mt-1">{opt.short}</div>
+                        <div className="text-sm text-ink-500 mt-1">{opt.short}</div>
                         {selected === opt.id && (
-                          <div className="mt-4 pt-4 border-t border-white/10 text-sm text-white/80 leading-relaxed">
+                          <div className="mt-4 pt-4 border-t border-ink-100 text-sm text-ink-700 leading-relaxed">
                             {opt.id === 'cash' && (
                               <div>
-                                <p><strong className="text-white">How it works.</strong> Cash accepted only at in-person delivery (Manhattan / Tri-State) or showroom pickup. A specialist will meet you at your address or arranged location. Full authentication and receipt provided on the spot.</p>
-                                <p className="mt-3"><strong className="text-white">Note.</strong> Cash pickup subject to identity verification and, for orders over $10,000, a completed IRS Form 8300 as required by federal law.</p>
+                                <p><strong className="text-ink-800">How it works.</strong> Cash accepted only at in-person delivery (Manhattan / Tri-State) or showroom pickup. A specialist will meet you at your address or arranged location. Full authentication and receipt provided on the spot.</p>
+                                <p className="mt-3"><strong className="text-ink-800">Note.</strong> Cash pickup subject to identity verification and, for orders over $10,000, a completed IRS Form 8300 as required by federal law.</p>
                               </div>
                             )}
                             {opt.id === 'wire' && (
                               <div>
-                                <p><strong className="text-white">How it works.</strong> Full bank wire instructions — receiving bank, ABA/SWIFT, account number, and reference code — will be emailed to <span className="text-champagne-200">{info.email || 'your email'}</span> within 15 minutes of order confirmation.</p>
-                                <p className="mt-3"><strong className="text-white">Timing.</strong> Watches ship the same or next business day after wire clears (typically 1–2 business days domestic, 2–5 international). No wire fees on our end.</p>
+                                <p><strong className="text-ink-800">How it works.</strong> Full bank wire instructions — receiving bank, ABA/SWIFT, account number, and reference code — will be emailed to <span className="text-oxblood-600">{info.email || 'your email'}</span> within 15 minutes of order confirmation.</p>
+                                <p className="mt-3"><strong className="text-ink-800">Timing.</strong> Watches ship the same or next business day after wire clears (typically 1–2 business days domestic, 2–5 international). No wire fees on our end.</p>
                               </div>
                             )}
                             {opt.id === 'zelle' && (
                               <div>
-                                <p><strong className="text-white">How it works.</strong> After you place the order, we'll email a Zelle handle to send payment to, along with a memo code unique to your order.</p>
-                                <p className="mt-3"><strong className="text-white">Limits.</strong> Most banks cap Zelle at $2,500–$10,000 per day. For orders above your bank's limit, split the payment across multiple days or use wire instead. Watch ships within 24 hours of full payment received.</p>
+                                <p><strong className="text-ink-800">How it works.</strong> After you place the order, we'll email a Zelle handle to send payment to, along with a memo code unique to your order.</p>
+                                <p className="mt-3"><strong className="text-ink-800">Limits.</strong> Most banks cap Zelle at $2,500–$10,000 per day. For orders above your bank's limit, split the payment across multiple days or use wire instead. Watch ships within 24 hours of full payment received.</p>
                               </div>
                             )}
                           </div>
@@ -146,35 +146,35 @@ export default function PaymentPage() {
               </section>
 
               {/* BILLING (same as shipping demo) */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl">Billing Address</h2>
                 <span className="hairline mt-3 mb-4" />
-                <div className="text-sm text-white/70">
+                <div className="text-sm text-ink-600">
                   Using shipping address:
                 </div>
                 <div className="mt-3 text-sm">
                   <div>{info.firstName} {info.lastName}</div>
-                  <div className="text-white/60">
+                  <div className="text-ink-500">
                     {info.address1}{info.address2 ? `, ${info.address2}` : ''}<br />
                     {info.city}, {info.state} {info.zip}<br />
                     {info.country}
                   </div>
                 </div>
-                <Link href="/checkout" className="mt-4 inline-block text-xs uppercase tracking-widest text-champagne-200 link-underline">
+                <Link href="/checkout" className="mt-4 inline-block text-xs uppercase tracking-widest text-oxblood-600 link-underline">
                   Edit Address
                 </Link>
               </section>
 
               {/* TERMS */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={agree}
                     onChange={(e) => setAgree(e.target.checked)}
-                    className="mt-1 accent-champagne-300"
+                    className="mt-1 accent-oxblood-600"
                   />
-                  <span className="text-sm text-white/70 leading-relaxed">
+                  <span className="text-sm text-ink-600 leading-relaxed">
                     I confirm my details are correct and I agree to the Amazing Timepieces order terms, including the 7-day inspection window, authentication standard, and — for cash orders — federal reporting requirements.
                   </span>
                 </label>
@@ -187,7 +187,7 @@ export default function PaymentPage() {
               )}
 
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                <Link href="/checkout" className="text-xs uppercase tracking-widest text-white/60 hover:text-champagne-200">
+                <Link href="/checkout" className="text-xs uppercase tracking-widest text-ink-500 hover:text-oxblood-600">
                   ← Back to Details
                 </Link>
                 <button
@@ -199,41 +199,41 @@ export default function PaymentPage() {
                 </button>
               </div>
 
-              <p className="text-xs text-white/50 text-center">
-                By placing this order you agree to our terms. Payment instructions will be emailed to <span className="text-champagne-200">{info.email}</span> immediately.
+              <p className="text-xs text-ink-400 text-center">
+                By placing this order you agree to our terms. Payment instructions will be emailed to <span className="text-oxblood-600">{info.email}</span> immediately.
               </p>
             </div>
 
             {/* SUMMARY */}
-            <aside className="lg:sticky lg:top-28 self-start bg-ink-900 border border-white/10 p-6 sm:p-8 h-fit">
+            <aside className="lg:sticky lg:top-28 self-start bg-bone-50 border border-ink-100 p-6 sm:p-8 h-fit">
               <h2 className="font-serif text-2xl">Order Summary</h2>
               <div className="mt-6 space-y-4 max-h-72 overflow-y-auto pr-2">
                 {items.map((i) => (
                   <div key={i.id} className="flex gap-3">
-                    <div className="w-16 h-16 bg-ink-800 flex-shrink-0 overflow-hidden">
+                    <div className="w-16 h-16 bg-bone-200 flex-shrink-0 overflow-hidden">
                       <img src={i.image} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] uppercase tracking-widest text-champagne-200/80">{i.brand}</div>
+                      <div className="text-[10px] uppercase tracking-widest text-oxblood-600">{i.brand}</div>
                       <div className="text-sm font-serif truncate">{i.model}</div>
-                      <div className="text-xs text-white/50">Ref. {i.reference}</div>
+                      <div className="text-xs text-ink-400">Ref. {i.reference}</div>
                     </div>
-                    <div className="text-sm text-champagne-200 whitespace-nowrap">{formatPrice(i.price)}</div>
+                    <div className="text-sm text-oxblood-600 whitespace-nowrap">{formatPrice(i.price)}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-white/60">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-champagne-200">Complimentary</span></div>
-                <div className="flex justify-between pt-3 border-t border-white/10 mt-3">
+              <div className="mt-6 pt-6 border-t border-ink-100 space-y-2 text-sm">
+                <div className="flex justify-between"><span className="text-ink-500">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+                <div className="flex justify-between"><span className="text-ink-500">Shipping</span><span className="text-oxblood-600">Complimentary</span></div>
+                <div className="flex justify-between pt-3 border-t border-ink-100 mt-3">
                   <span className="uppercase tracking-widest text-xs">Total Due</span>
-                  <span className="font-serif text-2xl text-champagne-200">{formatPrice(subtotal)}</span>
+                  <span className="font-serif text-2xl text-oxblood-600">{formatPrice(subtotal)}</span>
                 </div>
               </div>
-              <div className="mt-8 space-y-3 text-xs text-white/50">
-                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> Fully insured worldwide delivery</div>
-                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> 7-day inspection window</div>
-                <div className="flex items-center gap-2"><span className="text-champagne-200">✓</span> Authentication certificate included</div>
+              <div className="mt-8 space-y-3 text-xs text-ink-400">
+                <div className="flex items-center gap-2"><span className="text-oxblood-600">✓</span> Fully insured worldwide delivery</div>
+                <div className="flex items-center gap-2"><span className="text-oxblood-600">✓</span> 7-day inspection window</div>
+                <div className="flex items-center gap-2"><span className="text-oxblood-600">✓</span> Authentication certificate included</div>
               </div>
             </aside>
           </div>

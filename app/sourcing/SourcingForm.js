@@ -26,10 +26,10 @@ export default function SourcingForm() {
 
   if (status === 'done') {
     return (
-      <div className="bg-ink-900 border border-champagne-300/30 p-10 sm:p-14 text-center">
-        <div className="text-champagne-200 text-5xl">✓</div>
+      <div className="bg-bone-50 border border-oxblood-600/40 p-10 sm:p-14 text-center">
+        <div className="text-oxblood-600 text-5xl">✓</div>
         <h3 className="font-serif text-3xl mt-4">Request received.</h3>
-        <p className="mt-4 text-white/70 max-w-md mx-auto leading-relaxed">
+        <p className="mt-4 text-ink-600 max-w-md mx-auto leading-relaxed">
           A specialist will reach out within 48 hours with authenticated options that match your brief. Watch your email — including the spam folder, just in case.
         </p>
       </div>
@@ -37,7 +37,7 @@ export default function SourcingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-ink-900 border border-white/10 p-6 sm:p-10">
+    <form onSubmit={handleSubmit} className="bg-bone-50 border border-ink-100 p-6 sm:p-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <Field label="Full Name" required>
           <input required value={form.name} onChange={(e) => set('name', e.target.value)} className="ipt" />
@@ -81,23 +81,24 @@ export default function SourcingForm() {
       <button className="btn-gold w-full mt-8" disabled={status === 'sending'}>
         {status === 'sending' ? 'Sending…' : 'Submit Sourcing Request'}
       </button>
-      <p className="mt-4 text-xs text-white/50 text-center">
+      <p className="mt-4 text-xs text-ink-400 text-center">
         Your information is used only to fulfill this request. We never share client details.
       </p>
 
       <style jsx>{`
         .ipt {
           width: 100%;
-          background: #08080a;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #fdfaf3;
+          border: 1px solid rgba(20, 18, 16, 0.15);
           padding: 0.875rem 1rem;
-          color: #fff;
+          color: #141210;
           font-size: 0.9rem;
           transition: border-color 0.3s;
         }
+        .ipt::placeholder { color: #8a8172; }
         .ipt:focus {
           outline: none;
-          border-color: #dcbf72;
+          border-color: #8b1e2d;
         }
       `}</style>
     </form>
@@ -107,8 +108,8 @@ export default function SourcingForm() {
 function Field({ label, required, children, full }) {
   return (
     <label className={`block ${full ? 'md:col-span-2' : ''}`}>
-      <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 block">
-        {label} {required && <span className="text-champagne-200">*</span>}
+      <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">
+        {label} {required && <span className="text-oxblood-600">*</span>}
       </span>
       {children}
     </label>

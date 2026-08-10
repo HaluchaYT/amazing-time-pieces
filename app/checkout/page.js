@@ -50,7 +50,7 @@ export default function CheckoutInfoPage() {
   };
 
   if (!hydrated || !cartHydrated) {
-    return <div className="pt-40 text-center text-white/50">Loading…</div>;
+    return <div className="pt-40 text-center text-ink-400">Loading…</div>;
   }
 
   return (
@@ -64,7 +64,7 @@ export default function CheckoutInfoPage() {
           <div className="mb-8">
             <div className="eyebrow">Step 2 of 4</div>
             <h1 className="font-serif text-4xl sm:text-5xl mt-3">Your Details</h1>
-            <p className="mt-4 text-white/60 max-w-xl">
+            <p className="mt-4 text-ink-500 max-w-xl">
               We use these details to confirm your order, coordinate shipping, and issue payment instructions. Your information is never shared.
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function CheckoutInfoPage() {
           <form onSubmit={handleSubmit} className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
               {/* CONTACT */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl">Contact</h2>
                 <span className="hairline mt-3 mb-6" />
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -92,7 +92,7 @@ export default function CheckoutInfoPage() {
               </section>
 
               {/* SHIPPING ADDRESS */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl">Shipping Address</h2>
                 <span className="hairline mt-3 mb-6" />
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -131,7 +131,7 @@ export default function CheckoutInfoPage() {
               </section>
 
               {/* SHIPPING METHOD */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl">Delivery Method</h2>
                 <span className="hairline mt-3 mb-6" />
                 <div className="space-y-3">
@@ -145,8 +145,8 @@ export default function CheckoutInfoPage() {
                       key={opt.k}
                       className={`flex items-start gap-4 p-4 border cursor-pointer transition-all ${
                         info.shippingMethod === opt.k
-                          ? 'border-champagne-300 bg-champagne-300/5'
-                          : 'border-white/10 hover:border-white/25'
+                          ? 'border-oxblood-600 bg-oxblood-600/5'
+                          : 'border-ink-100 hover:border-ink-200'
                       }`}
                     >
                       <input
@@ -154,14 +154,14 @@ export default function CheckoutInfoPage() {
                         name="shipping"
                         checked={info.shippingMethod === opt.k}
                         onChange={() => set('shippingMethod', opt.k)}
-                        className="mt-1 accent-champagne-300"
+                        className="mt-1 accent-oxblood-600"
                       />
                       <div className="flex-1 flex justify-between gap-4">
                         <div>
                           <div className="font-medium">{opt.t}</div>
-                          <div className="text-xs text-white/50 mt-1">{opt.d}</div>
+                          <div className="text-xs text-ink-400 mt-1">{opt.d}</div>
                         </div>
-                        <div className="text-xs text-champagne-200 whitespace-nowrap self-start">{opt.p}</div>
+                        <div className="text-xs text-oxblood-600 whitespace-nowrap self-start">{opt.p}</div>
                       </div>
                     </label>
                   ))}
@@ -169,7 +169,7 @@ export default function CheckoutInfoPage() {
               </section>
 
               {/* NOTES */}
-              <section className="bg-ink-900 border border-white/10 p-6 sm:p-8">
+              <section className="bg-bone-50 border border-ink-100 p-6 sm:p-8">
                 <h2 className="font-serif text-2xl">Additional Notes</h2>
                 <span className="hairline mt-3 mb-6" />
                 <textarea
@@ -182,7 +182,7 @@ export default function CheckoutInfoPage() {
               </section>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                <Link href="/cart" className="text-xs uppercase tracking-widest text-white/60 hover:text-champagne-200">
+                <Link href="/cart" className="text-xs uppercase tracking-widest text-ink-500 hover:text-oxblood-600">
                   ← Back to Cart
                 </Link>
                 <button type="submit" className="btn-gold sm:min-w-[280px]">
@@ -192,29 +192,29 @@ export default function CheckoutInfoPage() {
             </div>
 
             {/* SUMMARY */}
-            <aside className="lg:sticky lg:top-28 self-start bg-ink-900 border border-white/10 p-6 sm:p-8 h-fit">
+            <aside className="lg:sticky lg:top-28 self-start bg-bone-50 border border-ink-100 p-6 sm:p-8 h-fit">
               <h2 className="font-serif text-2xl">Order Summary</h2>
               <div className="mt-6 space-y-4 max-h-72 overflow-y-auto pr-2">
                 {items.map((i) => (
                   <div key={i.id} className="flex gap-3">
-                    <div className="w-16 h-16 bg-ink-800 flex-shrink-0 overflow-hidden">
+                    <div className="w-16 h-16 bg-bone-200 flex-shrink-0 overflow-hidden">
                       <img src={i.image} alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[10px] uppercase tracking-widest text-champagne-200/80">{i.brand}</div>
+                      <div className="text-[10px] uppercase tracking-widest text-oxblood-600">{i.brand}</div>
                       <div className="text-sm font-serif truncate">{i.model}</div>
-                      <div className="text-xs text-white/50">Ref. {i.reference}</div>
+                      <div className="text-xs text-ink-400">Ref. {i.reference}</div>
                     </div>
-                    <div className="text-sm text-champagne-200 whitespace-nowrap">{formatPrice(i.price)}</div>
+                    <div className="text-sm text-oxblood-600 whitespace-nowrap">{formatPrice(i.price)}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-2 text-sm">
-                <div className="flex justify-between"><span className="text-white/60">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-                <div className="flex justify-between"><span className="text-white/60">Shipping</span><span className="text-champagne-200">Complimentary</span></div>
-                <div className="flex justify-between pt-3 border-t border-white/10 mt-3">
+              <div className="mt-6 pt-6 border-t border-ink-100 space-y-2 text-sm">
+                <div className="flex justify-between"><span className="text-ink-500">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
+                <div className="flex justify-between"><span className="text-ink-500">Shipping</span><span className="text-oxblood-600">Complimentary</span></div>
+                <div className="flex justify-between pt-3 border-t border-ink-100 mt-3">
                   <span className="uppercase tracking-widest text-xs">Total</span>
-                  <span className="font-serif text-2xl text-champagne-200">{formatPrice(subtotal)}</span>
+                  <span className="font-serif text-2xl text-oxblood-600">{formatPrice(subtotal)}</span>
                 </div>
               </div>
             </aside>
@@ -228,8 +228,8 @@ export default function CheckoutInfoPage() {
 function Field({ label, required, error, children, full }) {
   return (
     <label className={`block ${full ? 'sm:col-span-2' : ''}`}>
-      <span className="text-[10px] uppercase tracking-widest text-white/60 mb-2 flex items-center justify-between">
-        <span>{label} {required && <span className="text-champagne-200">*</span>}</span>
+      <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 flex items-center justify-between">
+        <span>{label} {required && <span className="text-oxblood-600">*</span>}</span>
         {error && <span className="text-red-400 normal-case tracking-normal">{error}</span>}
       </span>
       {children}
@@ -238,7 +238,7 @@ function Field({ label, required, error, children, full }) {
 }
 
 function inputCls(err) {
-  return `w-full bg-ink-950 border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none transition-colors ${
-    err ? 'border-red-400 focus:border-red-300' : 'border-white/10 focus:border-champagne-300'
+  return `w-full bg-bone-100 border px-4 py-3 text-ink-800 placeholder:text-ink-300 focus:outline-none transition-colors ${
+    err ? 'border-red-400 focus:border-red-300' : 'border-ink-100 focus:border-oxblood-600'
   }`;
 }
