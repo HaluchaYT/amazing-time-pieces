@@ -31,10 +31,10 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-500 ${
+      className={`sticky top-0 z-40 transition-all duration-500 border-b-2 border-oxblood-600 ${
         scrolled || open
-          ? 'bg-bone-50/98 backdrop-blur-md border-b border-oxblood-600/20 shadow-[0_4px_30px_-8px_rgba(90,16,32,0.08)]'
-          : 'bg-bone-100/95 backdrop-blur-sm'
+          ? 'bg-ink-900/98 backdrop-blur-md shadow-[0_10px_40px_-12px_rgba(0,0,0,0.4)]'
+          : 'bg-ink-800/95 backdrop-blur-sm'
       }`}
     >
       <div className="container-x">
@@ -49,7 +49,7 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className="text-[11px] tracking-[0.3em] uppercase text-ink-600 hover:text-oxblood-600 transition-colors link-underline"
+                className="text-[11px] tracking-[0.3em] uppercase text-bone-100/80 hover:text-oxblood-300 transition-colors link-underline"
               >
                 {n.label}
               </Link>
@@ -63,18 +63,17 @@ export default function Header() {
             className="flex items-center gap-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2 group"
             onClick={() => setOpen(false)}
           >
-            {/* Mobile: icon + wordmark side by side */}
             <img
               src="/logo-icon.png"
               alt=""
-              className={`w-auto lg:hidden transition-all duration-500 group-hover:scale-105 ${
+              className={`w-auto lg:hidden transition-all duration-500 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(220,191,114,0.15)] ${
                 scrolled ? 'h-14' : 'h-16 sm:h-20'
               }`}
             />
             <img
               src="/logo-wordmark.png"
               alt="Amazing Time Pieces"
-              className={`w-auto transition-all duration-500 group-hover:opacity-90 ${
+              className={`w-auto transition-all duration-500 group-hover:opacity-90 drop-shadow-[0_2px_16px_rgba(220,191,114,0.15)] ${
                 scrolled
                   ? 'h-12 sm:h-14 lg:h-16'
                   : 'h-14 sm:h-20 lg:h-24 xl:h-28'
@@ -88,13 +87,13 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className="text-[11px] tracking-[0.3em] uppercase text-ink-600 hover:text-oxblood-600 transition-colors link-underline"
+                className="text-[11px] tracking-[0.3em] uppercase text-bone-100/80 hover:text-oxblood-300 transition-colors link-underline"
               >
                 {n.label}
               </Link>
             ))}
-            <div className="h-4 w-px bg-ink-200" />
-            <Link href="/cart" aria-label="Cart" className="relative text-ink-600 hover:text-oxblood-600 transition-colors">
+            <div className="h-4 w-px bg-bone-100/20" />
+            <Link href="/cart" aria-label="Cart" className="relative text-bone-100/80 hover:text-oxblood-300 transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
                 <path d="M6 7h12l-1.5 11a2 2 0 0 1-2 1.75h-5A2 2 0 0 1 7.5 18L6 7Z" strokeLinejoin="round" />
                 <path d="M9 7V5a3 3 0 0 1 6 0v2" strokeLinecap="round" />
@@ -109,7 +108,7 @@ export default function Header() {
 
           {/* Mobile actions */}
           <div className="lg:hidden flex items-center gap-4">
-            <Link href="/cart" aria-label="Cart" className="relative text-ink-600 hover:text-oxblood-600 transition-colors">
+            <Link href="/cart" aria-label="Cart" className="relative text-bone-100/80 hover:text-oxblood-300 transition-colors">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                 <path d="M6 7h12l-1.5 11a2 2 0 0 1-2 1.75h-5A2 2 0 0 1 7.5 18L6 7Z" strokeLinejoin="round" />
                 <path d="M9 7V5a3 3 0 0 1 6 0v2" strokeLinecap="round" />
@@ -121,7 +120,7 @@ export default function Header() {
               )}
             </Link>
             <button
-              className="text-ink-700 p-1.5 -mr-1.5"
+              className="text-bone-100/90 p-1.5 -mr-1.5"
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
               aria-expanded={open}
@@ -141,38 +140,38 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-bone-100 border-t border-ink-100">
+        <div className="lg:hidden bg-ink-900 border-t border-bone-100/10">
           <nav className="container-x py-6 flex flex-col gap-1">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="py-4 border-b border-ink-100 font-serif text-3xl text-ink-800 hover:text-oxblood-600 transition-colors flex items-center justify-between"
+                className="py-4 border-b border-bone-100/10 font-serif text-3xl text-bone-50 hover:text-oxblood-300 transition-colors flex items-center justify-between"
               >
                 {n.label}
-                <span className="text-oxblood-600 text-lg">→</span>
+                <span className="text-oxblood-400 text-lg">→</span>
               </Link>
             ))}
             <div className="mt-8 flex flex-col gap-3">
               <Link href="/watches" onClick={() => setOpen(false)} className="btn-oxblood">
                 Browse Collection
               </Link>
-              <Link href="/sourcing" onClick={() => setOpen(false)} className="btn-ghost">
+              <Link href="/sourcing" onClick={() => setOpen(false)} className="inline-flex items-center justify-center px-8 py-4 border border-bone-100/40 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-bone-50 hover:text-ink-800">
                 Request Sourcing
               </Link>
             </div>
-            <div className="mt-10 pt-6 border-t border-ink-100 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-ink-400">
-              <a href="tel:+16503465605" className="hover:text-oxblood-600">+1 (650) 346-5605</a>
+            <div className="mt-10 pt-6 border-t border-bone-100/10 flex items-center justify-between text-[10px] uppercase tracking-[0.3em] text-bone-100/60">
+              <a href="tel:+16503465605" className="hover:text-oxblood-300">+1 (650) 346-5605</a>
               <div className="flex gap-4">
-                <a href="https://instagram.com" aria-label="Instagram" className="hover:text-oxblood-600">
+                <a href="https://instagram.com" aria-label="Instagram" className="hover:text-oxblood-300">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                     <rect x="3" y="3" width="18" height="18" rx="4" />
                     <circle cx="12" cy="12" r="4" />
                     <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                   </svg>
                 </a>
-                <a href="https://facebook.com" aria-label="Facebook" className="hover:text-oxblood-600">
+                <a href="https://facebook.com" aria-label="Facebook" className="hover:text-oxblood-300">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
