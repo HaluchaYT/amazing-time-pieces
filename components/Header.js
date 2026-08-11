@@ -33,12 +33,16 @@ export default function Header() {
     <header
       className={`sticky top-0 z-40 transition-all duration-500 ${
         scrolled || open
-          ? 'bg-bone-100/95 backdrop-blur-md border-b border-ink-100'
-          : 'bg-bone-100/85 backdrop-blur-sm'
+          ? 'bg-bone-50/98 backdrop-blur-md border-b border-oxblood-600/20 shadow-[0_4px_30px_-8px_rgba(90,16,32,0.08)]'
+          : 'bg-bone-100/95 backdrop-blur-sm'
       }`}
     >
       <div className="container-x">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+        <div
+          className={`flex items-center justify-between transition-all duration-500 ${
+            scrolled ? 'h-24 sm:h-28' : 'h-32 sm:h-36 lg:h-40'
+          }`}
+        >
           {/* Left nav */}
           <nav className="hidden lg:flex items-center gap-9 flex-1">
             {NAV.slice(0, 3).map((n) => (
@@ -52,22 +56,29 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Brand — icon (mobile) + wordmark (all) */}
+          {/* Brand — hero-sized wordmark, centered on desktop */}
           <Link
             href="/"
             aria-label="Amazing Time Pieces — Home"
             className="flex items-center gap-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2 group"
             onClick={() => setOpen(false)}
           >
+            {/* Mobile: icon + wordmark side by side */}
             <img
               src="/logo-icon.png"
               alt=""
-              className="h-10 sm:h-12 w-auto lg:hidden transition-transform duration-500 group-hover:scale-105"
+              className={`w-auto lg:hidden transition-all duration-500 group-hover:scale-105 ${
+                scrolled ? 'h-14' : 'h-16 sm:h-20'
+              }`}
             />
             <img
               src="/logo-wordmark.png"
               alt="Amazing Time Pieces"
-              className="h-8 sm:h-10 lg:h-12 w-auto transition-opacity duration-500 group-hover:opacity-90"
+              className={`w-auto transition-all duration-500 group-hover:opacity-90 ${
+                scrolled
+                  ? 'h-12 sm:h-14 lg:h-16'
+                  : 'h-14 sm:h-20 lg:h-24 xl:h-28'
+              }`}
             />
           </Link>
 
