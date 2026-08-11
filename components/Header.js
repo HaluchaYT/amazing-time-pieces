@@ -40,7 +40,7 @@ export default function Header() {
       <div className="container-x">
         <div
           className={`flex items-center justify-between transition-all duration-500 ${
-            scrolled ? 'h-24 sm:h-28' : 'h-32 sm:h-36 lg:h-40'
+            scrolled ? 'h-28 sm:h-32 lg:h-28' : 'h-36 sm:h-40 lg:h-40'
           }`}
         >
           {/* Left nav */}
@@ -60,23 +60,16 @@ export default function Header() {
           <Link
             href="/"
             aria-label="Amazing Time Pieces — Home"
-            className="flex items-center gap-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2 group"
+            className="flex items-center gap-3 min-w-0 flex-1 lg:flex-none lg:absolute lg:left-1/2 lg:-translate-x-1/2 group"
             onClick={() => setOpen(false)}
           >
             <img
-              src="/logo-icon.png"
-              alt=""
-              className={`w-auto lg:hidden transition-all duration-500 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(220,191,114,0.15)] ${
-                scrolled ? 'h-14' : 'h-16 sm:h-20'
-              }`}
-            />
-            <img
               src="/logo-wordmark.png"
               alt="Amazing Time Pieces"
-              className={`w-auto transition-all duration-500 group-hover:opacity-90 drop-shadow-[0_2px_16px_rgba(220,191,114,0.15)] ${
+              className={`w-auto max-w-full transition-all duration-500 group-hover:opacity-90 drop-shadow-[0_2px_16px_rgba(220,191,114,0.2)] ${
                 scrolled
-                  ? 'h-12 sm:h-14 lg:h-16'
-                  : 'h-14 sm:h-20 lg:h-24 xl:h-28'
+                  ? 'h-16 sm:h-20 lg:h-16'
+                  : 'h-24 sm:h-28 lg:h-24 xl:h-28'
               }`}
             />
           </Link>
