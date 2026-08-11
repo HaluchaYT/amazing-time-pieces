@@ -38,7 +38,7 @@ export default function Header() {
       }`}
     >
       <div className="container-x">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Left nav */}
           <nav className="hidden lg:flex items-center gap-9 flex-1">
             {NAV.slice(0, 3).map((n) => (
@@ -52,25 +52,23 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Brand */}
-          <Link href="/" className="flex items-center gap-3 group lg:absolute lg:left-1/2 lg:-translate-x-1/2" onClick={() => setOpen(false)}>
-            <svg width="28" height="28" viewBox="0 0 32 32" className="text-oxblood-600 transition-transform duration-700 group-hover:rotate-45">
-              <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" strokeWidth="1" />
-              <circle cx="16" cy="16" r="10.5" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-              <circle cx="16" cy="16" r="1.2" fill="currentColor" />
-              <line x1="16" y1="16" x2="16" y2="7.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              <line x1="16" y1="16" x2="21.5" y2="19" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              <line x1="16" y1="2.5" x2="16" y2="4" stroke="currentColor" strokeWidth="1" />
-              <line x1="16" y1="28" x2="16" y2="29.5" stroke="currentColor" strokeWidth="1" />
-              <line x1="2.5" y1="16" x2="4" y2="16" stroke="currentColor" strokeWidth="1" />
-              <line x1="28" y1="16" x2="29.5" y2="16" stroke="currentColor" strokeWidth="1" />
-            </svg>
-            <div className="leading-none">
-              <div className="font-serif text-lg sm:text-xl tracking-wide text-ink-800">Amazing Timepieces</div>
-              <div className="text-[8px] uppercase tracking-[0.42em] text-oxblood-600/80 mt-1 hidden sm:block">
-                Est. 2014 · New York
-              </div>
-            </div>
+          {/* Brand — icon (mobile) + wordmark (all) */}
+          <Link
+            href="/"
+            aria-label="Amazing Time Pieces — Home"
+            className="flex items-center gap-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2 group"
+            onClick={() => setOpen(false)}
+          >
+            <img
+              src="/logo-icon.png"
+              alt=""
+              className="h-10 sm:h-12 w-auto lg:hidden transition-transform duration-500 group-hover:scale-105"
+            />
+            <img
+              src="/logo-wordmark.png"
+              alt="Amazing Time Pieces"
+              className="h-8 sm:h-10 lg:h-12 w-auto transition-opacity duration-500 group-hover:opacity-90"
+            />
           </Link>
 
           {/* Right nav */}

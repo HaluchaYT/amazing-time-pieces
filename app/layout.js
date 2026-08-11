@@ -7,22 +7,22 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: {
-    default: 'Amazing Timepieces — Rare & Luxury Watches, Curated',
-    template: '%s | Amazing Timepieces',
+    default: 'Amazing Time Pieces — Rare & Luxury Watches, Curated',
+    template: '%s | Amazing Time Pieces',
   },
   description:
-    'Amazing Timepieces is a private atelier for the collector — rare Rolex, discontinued Patek Philippe, unworn Audemars Piguet. Authenticated, insured, delivered worldwide.',
+    'Amazing Time Pieces is a private atelier for the collector — rare Rolex, discontinued Patek Philippe, unworn Audemars Piguet. Authenticated, insured, delivered worldwide.',
   keywords: [
     'luxury watches', 'rare watches', 'watch sourcing', 'Rolex', 'Patek Philippe',
     'Audemars Piguet', 'pre-owned watches', 'vintage watches', 'watch dealer',
-    'amazing timepieces', 'authenticated watches', 'concierge watch service',
+    'amazing time pieces', 'authenticated watches', 'concierge watch service',
   ],
   metadataBase: new URL('https://amazingtimepieces.com'),
   openGraph: {
-    title: 'Amazing Timepieces — Rare & Luxury Watches, Curated',
+    title: 'Amazing Time Pieces — Rare & Luxury Watches, Curated',
     description: 'A private atelier for the collector. Concierge watch sourcing worldwide.',
     type: 'website',
-    siteName: 'Amazing Timepieces',
+    siteName: 'Amazing Time Pieces',
   },
   robots: { index: true, follow: true },
 };

@@ -4,7 +4,7 @@ import SourcingForm from './SourcingForm';
 export const metadata = {
   title: 'Watch Sourcing — Discontinued & Rare References Located',
   description:
-    'Concierge watch sourcing for collectors. Rolex, Patek Philippe, Audemars Piguet, F.P. Journe — located, authenticated, delivered by Amazing Timepieces.',
+    'Concierge watch sourcing for collectors. Rolex, Patek Philippe, Audemars Piguet, F.P. Journe — located, authenticated, delivered by Amazing Time Pieces.',
 };
 
 export default function SourcingPage() {

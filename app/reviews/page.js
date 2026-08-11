@@ -4,7 +4,7 @@ import { platforms, orderedPlatforms } from '@/lib/reviews';
 export const metadata = {
   title: 'Reviews — What Clients Say',
   description:
-    'Verified feedback from Amazing Timepieces buyers across eBay, Google, and Yelp — a 100% positive record from over two hundred sixty completed transactions.',
+    'Verified feedback from Amazing Time Pieces buyers across eBay, Google, and Yelp — a 100% positive record from over two hundred sixty completed transactions.',
 };
 
 const ICONS = {

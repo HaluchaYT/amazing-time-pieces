@@ -3,7 +3,7 @@ import ContactForm from './ContactForm';
 
 export const metadata = {
   title: 'Contact — Speak with a Specialist',
-  description: 'Contact Amazing Timepieces — by appointment only. Email, phone, or submit the form. A specialist responds within one business day.',
+  description: 'Contact Amazing Time Pieces — by appointment only. Email, phone, or submit the form. A specialist responds within one business day.',
 };
 
 export default function ContactPage() {
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <div className="bg-bone-50 border border-ink-100 p-7 hover:border-oxblood-600/40 transition-all duration-500">
               <div className="eyebrow">Showroom</div>
               <p className="font-serif text-xl mt-3">By appointment only</p>
-              <p className="mt-2 text-sm text-ink-500 italic font-serif">Manhattan · New York</p>
+              <p className="mt-2 text-sm text-ink-500 italic font-serif">San Carlos · California</p>
               <p className="mt-1 text-xs text-ink-300">Private meetings worldwide by arrangement</p>
             </div>
             <div className="bg-gradient-to-br from-bone-50 to-bone-100 border border-oxblood-600/30 p-7">

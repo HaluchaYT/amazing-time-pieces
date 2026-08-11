@@ -1,4 +1,4 @@
-# Amazing Timepieces
+# Amazing Time Pieces
 
 A luxury and rare watch dealer website built with Next.js 14 (App Router), React 18, and Tailwind CSS.
 

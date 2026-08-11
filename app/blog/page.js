@@ -4,7 +4,7 @@ import { posts } from '@/lib/blog';
 export const metadata = {
   title: 'The Journal — Watch Buying Guides, Reviews & Insider Insights',
   description:
-    'Long-form watch articles from Amazing Timepieces — Rolex buying guides, Nautilus vs Royal Oak comparisons, authentication tips, and the mechanics of the pre-owned market.',
+    'Long-form watch articles from Amazing Time Pieces — Rolex buying guides, Nautilus vs Royal Oak comparisons, authentication tips, and the mechanics of the pre-owned market.',
 };
 
 export default function BlogPage() {

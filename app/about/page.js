@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Maison — A Private Watch Atelier',
   description:
-    'Amazing Timepieces is a private atelier for the discerning collector. Learn about our forty-point authentication standard, our team, and our client philosophy.',
+    'Amazing Time Pieces is a private atelier for the discerning collector. Learn about our forty-point authentication standard, our team, and our client philosophy.',
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
             <span className="text-oxblood-600">Maison</span>
           </div>
           <div className="max-w-3xl">
-            <div className="eyebrow">The Amazing Timepieces Maison</div>
+            <div className="eyebrow">The Amazing Time Pieces Maison</div>
             <h1 className="section-title-lg mt-6 text-balance">
               A quieter way to buy
               <span className="block font-serif italic text-oxblood-600 mt-2">

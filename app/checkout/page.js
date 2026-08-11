@@ -138,8 +138,8 @@ export default function CheckoutInfoPage() {
                   {[
                     { k: 'insured-overnight', t: 'Insured Overnight', d: 'FedEx Priority Overnight · fully insured · signature required', p: 'Complimentary' },
                     { k: 'insured-2day', t: 'Insured 2-Day', d: 'FedEx 2Day · fully insured · signature required', p: 'Complimentary' },
-                    { k: 'in-person', t: 'In-Person Delivery', d: 'Manhattan / Tri-State — a specialist delivers by hand', p: 'By arrangement' },
-                    { k: 'appointment', t: 'Showroom Appointment', d: 'Collect in person by appointment · Manhattan, NY', p: 'Complimentary' },
+                    { k: 'in-person', t: 'In-Person Delivery', d: 'San Francisco Bay Area — a specialist delivers by hand', p: 'By arrangement' },
+                    { k: 'appointment', t: 'Showroom Appointment', d: 'Collect in person by appointment · San Carlos, CA', p: 'Complimentary' },
                   ].map((opt) => (
                     <label
                       key={opt.k}

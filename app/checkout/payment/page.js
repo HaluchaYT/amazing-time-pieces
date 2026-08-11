@@ -121,7 +121,7 @@ export default function PaymentPage() {
                           <div className="mt-4 pt-4 border-t border-ink-100 text-sm text-ink-700 leading-relaxed">
                             {opt.id === 'cash' && (
                               <div>
-                                <p><strong className="text-ink-800">How it works.</strong> Cash accepted only at in-person delivery (Manhattan / Tri-State) or showroom pickup. A specialist will meet you at your address or arranged location. Full authentication and receipt provided on the spot.</p>
+                                <p><strong className="text-ink-800">How it works.</strong> Cash accepted only at in-person delivery (San Francisco Bay Area) or showroom pickup. A specialist will meet you at your address or arranged location. Full authentication and receipt provided on the spot.</p>
                                 <p className="mt-3"><strong className="text-ink-800">Note.</strong> Cash pickup subject to identity verification and, for orders over $10,000, a completed IRS Form 8300 as required by federal law.</p>
                               </div>
                             )}
@@ -175,7 +175,7 @@ export default function PaymentPage() {
                     className="mt-1 accent-oxblood-600"
                   />
                   <span className="text-sm text-ink-600 leading-relaxed">
-                    I confirm my details are correct and I agree to the Amazing Timepieces order terms, including the 7-day inspection window, authentication standard, and — for cash orders — federal reporting requirements.
+                    I confirm my details are correct and I agree to the Amazing Time Pieces order terms, including the 7-day inspection window, authentication standard, and — for cash orders — federal reporting requirements.
                   </span>
                 </label>
               </section>
