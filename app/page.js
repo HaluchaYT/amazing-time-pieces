@@ -76,7 +76,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-ink-100">
             {[
-              { n: 'MMXIV', l: 'Est. San Carlos', s: 'Since 2014' },
+              { n: 'MMXIV', l: 'Established', s: 'Trading Since 2014' },
               { n: '1,247', l: 'Timepieces Placed', s: 'Across 34 Countries' },
               { n: '40', l: 'Point Authentication', s: 'Every Watch' },
               { n: '48h', l: 'Sourcing Response', s: 'Grail-tier or Modern' },

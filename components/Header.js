@@ -40,7 +40,7 @@ export default function Header() {
       <div className="container-x">
         <div
           className={`flex items-center justify-between transition-all duration-500 ${
-            scrolled ? 'h-28 sm:h-32 lg:h-28' : 'h-36 sm:h-40 lg:h-40'
+            scrolled ? 'h-32 sm:h-36 lg:h-32' : 'h-40 sm:h-44 lg:h-48'
           }`}
         >
           {/* Left nav */}
@@ -68,8 +68,8 @@ export default function Header() {
               alt="Amazing Time Pieces"
               className={`w-auto max-w-full transition-all duration-500 group-hover:opacity-90 drop-shadow-[0_2px_16px_rgba(220,191,114,0.2)] ${
                 scrolled
-                  ? 'h-16 sm:h-20 lg:h-16'
-                  : 'h-24 sm:h-28 lg:h-24 xl:h-28'
+                  ? 'h-20 sm:h-24 lg:h-20'
+                  : 'h-28 sm:h-32 lg:h-32 xl:h-36'
               }`}
             />
           </Link>

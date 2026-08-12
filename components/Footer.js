@@ -28,7 +28,7 @@ export default function Footer() {
               className="h-10 w-auto brightness-[1.15] contrast-[1.05]"
             />
             <div className="text-[10px] uppercase tracking-[0.4em] text-oxblood-300 mt-4">
-              Est. MMXIV — San Carlos, CA
+              Est. MMXIV
             </div>
             <p className="mt-5 text-sm text-bone-100/70 leading-relaxed">
               A private atelier for the discerning collector. Rare, discontinued, and grail-tier timepieces — authenticated, discretely delivered.
@@ -91,7 +91,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-bone-100/50 text-xs mt-4">
-                San Carlos · California<br />Private meetings worldwide by arrangement
+                Authenticated · Curated · Exceptional
               </li>
             </ul>
           </div>

@@ -47,8 +47,7 @@ export default function ContactPage() {
             <div className="bg-bone-50 border border-ink-100 p-7 hover:border-oxblood-600/40 transition-all duration-500">
               <div className="eyebrow">Showroom</div>
               <p className="font-serif text-xl mt-3">By appointment only</p>
-              <p className="mt-2 text-sm text-ink-500 italic font-serif">San Carlos · California</p>
-              <p className="mt-1 text-xs text-ink-300">Private meetings worldwide by arrangement</p>
+              <p className="mt-2 text-sm text-ink-500 italic font-serif">In-person meetings by arrangement</p>
             </div>
             <div className="bg-gradient-to-br from-bone-50 to-bone-100 border border-oxblood-600/30 p-7">
               <div className="eyebrow">Response Time</div>

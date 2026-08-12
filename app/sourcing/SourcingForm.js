@@ -8,6 +8,7 @@ export default function SourcingForm() {
     email: '',
     phone: '',
     brand: '',
+    model: '',
     reference: '',
     condition: 'Any',
     budget: '',
@@ -40,19 +41,22 @@ export default function SourcingForm() {
     <form onSubmit={handleSubmit} className="bg-bone-50 border border-ink-100 p-6 sm:p-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <Field label="Full Name" required>
-          <input required value={form.name} onChange={(e) => set('name', e.target.value)} className="ipt" />
+          <input required value={form.name} onChange={(e) => set('name', e.target.value)} className="ipt" autoComplete="name" />
         </Field>
         <Field label="Email" required>
-          <input type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} className="ipt" />
+          <input type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} className="ipt" autoComplete="email" />
         </Field>
         <Field label="Phone">
-          <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} className="ipt" />
+          <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} className="ipt" autoComplete="tel" />
         </Field>
-        <Field label="Brand" required>
-          <input required placeholder="e.g. Patek Philippe" value={form.brand} onChange={(e) => set('brand', e.target.value)} className="ipt" />
+        <Field label="Brand">
+          <input placeholder="e.g. Patek Philippe" value={form.brand} onChange={(e) => set('brand', e.target.value)} className="ipt" />
         </Field>
-        <Field label="Reference" required>
-          <input required placeholder="e.g. 5711/1A-010" value={form.reference} onChange={(e) => set('reference', e.target.value)} className="ipt" />
+        <Field label="Model (if known)">
+          <input placeholder="e.g. Nautilus" value={form.model} onChange={(e) => set('model', e.target.value)} className="ipt" />
+        </Field>
+        <Field label="Reference (if known)">
+          <input placeholder="e.g. 5711/1A-010" value={form.reference} onChange={(e) => set('reference', e.target.value)} className="ipt" />
         </Field>
         <Field label="Acceptable Condition">
           <select value={form.condition} onChange={(e) => set('condition', e.target.value)} className="ipt">

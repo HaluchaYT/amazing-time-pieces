@@ -44,8 +44,8 @@ export default function WatchesPage() {
             The Collection.
           </h1>
           <div className="hairline-gold mt-8 w-16" />
-          <p className="mt-8 max-w-2xl text-ink-600 leading-relaxed text-lg font-light">
-            Every timepiece below has been physically inspected, authenticated, and photographed against our reference standard. Availability is live — if it appears, it is available.
+          <p className="mt-8 max-w-3xl text-ink-600 leading-relaxed text-lg font-light">
+            Every timepiece shown has been physically inspected, authenticated, and photographed by us to indicate current physical condition. If a timepiece is shown on this page, it's in stock. BUT, on the rare occasion something sells before we can update our collection, we will gladly source that watch for you.
           </p>
         </div>
       </section>
@@ -69,9 +69,10 @@ export default function WatchesPage() {
             <select
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
-              className="bg-bone-50/95 border border-ink-100 px-4 py-3 text-sm text-ink-800 focus:outline-none focus:border-oxblood-600 min-w-[160px]"
+              className="bg-bone-50/95 border border-ink-100 px-4 py-3 text-sm text-ink-800 focus:outline-none focus:border-oxblood-600 min-w-[180px]"
+              aria-label="Filter by brand"
             >
-              <option>All Maisons</option>
+              <option value="All">Available Brands</option>
               {brands.map((b) => (
                 <option key={b}>{b}</option>
               ))}
@@ -81,8 +82,9 @@ export default function WatchesPage() {
             value={sort}
             onChange={(e) => setSort(e.target.value)}
             className="bg-bone-50/95 border border-ink-100 px-4 py-3 text-sm text-ink-800 focus:outline-none focus:border-oxblood-600 min-w-[180px]"
+            aria-label="Sort order"
           >
-            <option value="featured">Sort — Curator's Order</option>
+            <option value="featured">Sort order</option>
             <option value="price-asc">Price — Low to High</option>
             <option value="price-desc">Price — High to Low</option>
             <option value="year-desc">Year — Newest First</option>
@@ -101,8 +103,8 @@ export default function WatchesPage() {
           {filtered.length === 0 ? (
             <div className="py-24 text-center max-w-md mx-auto">
               <p className="font-serif text-3xl italic text-ink-600">Nothing matches those criteria.</p>
-              <p className="mt-4 text-sm text-ink-400">Try a different maison, clear your search, or request a sourcing for something specific.</p>
-              <Link href="/sourcing" className="btn-ghost mt-8 inline-flex">Begin a Sourcing</Link>
+              <p className="mt-4 text-sm text-ink-400">Try a different brand, clear your search, or submit a sourcing request for something specific.</p>
+              <Link href="/sourcing#request" className="btn-ghost mt-8 inline-flex">Submit a Sourcing Request</Link>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -117,15 +119,9 @@ export default function WatchesPage() {
       <section className="bg-bone-100 py-20 sm:py-28 border-t border-oxblood-600/15 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-50" />
         <div className="relative container-narrow text-center">
-          <div className="eyebrow">Not Listed?</div>
-          <h2 className="section-title mt-6 text-balance">
-            Every reference. <span className="italic text-oxblood-600">Somewhere.</span>
-          </h2>
-          <div className="hairline-gold mt-6 mx-auto w-16" />
-          <p className="mt-8 text-ink-600 leading-relaxed max-w-xl mx-auto">
-            Our sourcing service locates specific references worldwide — including watches never listed publicly. Response within forty-eight hours.
-          </p>
-          <Link href="/sourcing" className="btn-gold mt-10 inline-flex">Begin a Sourcing Request</Link>
+          <div className="eyebrow">Brand or Model Not Shown?</div>
+          <div className="hairline-gold mt-8 mx-auto w-16" />
+          <Link href="/sourcing#request" className="btn-gold mt-10 inline-flex">Submit a Sourcing Request</Link>
         </div>
       </section>
     </>
