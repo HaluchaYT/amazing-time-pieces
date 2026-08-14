@@ -85,7 +85,7 @@ export default function ReviewsPage() {
           <div className="py-10 sm:py-14 text-center px-4">
             <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">MMXIX</div>
             <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-ink-600">Established</div>
-            <div className="mt-1 text-[10px] italic text-ink-400 font-serif">Buying · Selling · Trading</div>
+            <div className="mt-1 text-[10px] italic text-ink-400 font-serif">Buying · Selling · Trading for over a decade</div>
           </div>
           <div className="py-10 sm:py-14 text-center px-4">
             <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">5.0</div>
