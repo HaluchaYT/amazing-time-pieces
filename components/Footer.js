@@ -11,9 +11,6 @@ export default function Footer() {
             alt="Amazing Time Pieces mark"
             className="h-16 w-auto mx-auto"
           />
-          <p className="font-serif italic text-2xl sm:text-3xl mt-8 text-bone-100 text-balance">
-            "The watch you cannot find, we already know where it lives."
-          </p>
           <div className="hairline-gold mt-6 mx-auto max-w-[80px]" />
           <p className="mt-4 text-[10px] uppercase tracking-[0.4em] text-oxblood-300">
             Authenticated · Curated · Exceptional
@@ -28,20 +25,17 @@ export default function Footer() {
               className="h-10 w-auto brightness-[1.15] contrast-[1.05]"
             />
             <div className="text-[10px] uppercase tracking-[0.4em] text-oxblood-300 mt-4">
-              Est. MMXIV
+              Est. MMXIX
             </div>
-            <p className="mt-5 text-sm text-bone-100/70 leading-relaxed">
-              A private atelier for the discerning collector. Rare, discontinued, and grail-tier timepieces — authenticated, discretely delivered.
-            </p>
             <div className="mt-6 flex gap-4">
-              <a href="https://instagram.com/amazingtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
+              <a href="https://instagram.com/roamtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                   <rect x="3" y="3" width="18" height="18" rx="4" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                 </svg>
               </a>
-              <a href="https://facebook.com/Amazingtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
+              <a href="#" title="Facebook — business page coming soon" aria-label="Facebook (business page coming soon)" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
@@ -57,11 +51,10 @@ export default function Footer() {
           <div>
             <div className="uppercase tracking-[0.4em] text-[10px] text-oxblood-300 mb-5">Explore</div>
             <ul className="space-y-3 text-sm text-bone-100/70">
-              <li><Link href="/watches" className="hover:text-oxblood-300 transition-colors">The Collection</Link></li>
+              <li><Link href="/watches" className="hover:text-oxblood-300 transition-colors">Current Inventory</Link></li>
               <li><Link href="/sourcing" className="hover:text-oxblood-300 transition-colors">Watch Sourcing</Link></li>
-              <li><Link href="/blog" className="hover:text-oxblood-300 transition-colors">The Journal</Link></li>
               <li><Link href="/reviews" className="hover:text-oxblood-300 transition-colors">Reviews</Link></li>
-              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Maison</Link></li>
+              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">How We Work</Link></li>
             </ul>
           </div>
 
@@ -70,28 +63,24 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-bone-100/70">
               <li><Link href="/contact" className="hover:text-oxblood-300 transition-colors">Contact</Link></li>
               <li><Link href="/sourcing" className="hover:text-oxblood-300 transition-colors">Consignment</Link></li>
-              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Authentication</Link></li>
-              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Insured Shipping</Link></li>
-              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">The Standard</Link></li>
+              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Payment Options</Link></li>
+              <li><Link href="/about" className="hover:text-oxblood-300 transition-colors">Insured Delivery</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="uppercase tracking-[0.4em] text-[10px] text-oxblood-300 mb-5">By Appointment</div>
+            <div className="uppercase tracking-[0.4em] text-[10px] text-oxblood-300 mb-5">Get In Touch</div>
             <ul className="space-y-3 text-sm text-bone-100/70">
-              <li className="text-oxblood-300">Call for store hours</li>
               <li>
                 <a href="tel:+16503465605" className="hover:text-oxblood-300 transition-colors">
                   +1 (650) 346-5605
                 </a>
+                <div className="text-[10px] italic text-bone-100/40 font-serif mt-1">Text is best</div>
               </li>
               <li>
                 <a href="mailto:getyours@amazingtimepieces.com" className="hover:text-oxblood-300 transition-colors break-all">
                   getyours@amazingtimepieces.com
                 </a>
-              </li>
-              <li className="text-bone-100/50 text-xs mt-4">
-                Authenticated · Curated · Exceptional
               </li>
             </ul>
           </div>
@@ -107,7 +96,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-6 text-[10px] uppercase tracking-[0.3em] text-bone-100/25 max-w-4xl leading-loose">
-          Amazing Time Pieces is an independent atelier and is not affiliated with, sponsored by, or endorsed by any watch manufacturer including Rolex S.A., Patek Philippe, Audemars Piguet, or any other trademark holder. All trademarks remain the property of their respective owners.
+          Amazing Time Pieces is an independent dealer and is not affiliated with, sponsored by, or endorsed by any watch manufacturer including Rolex S.A., Patek Philippe, Audemars Piguet, or any other trademark holder. All trademarks remain the property of their respective owners.
         </p>
       </div>
     </footer>

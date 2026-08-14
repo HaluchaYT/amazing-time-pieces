@@ -5,11 +5,10 @@ import { useEffect, useState } from 'react';
 import { useCart } from './CartProvider';
 
 const NAV = [
-  { href: '/watches', label: 'The Collection' },
+  { href: '/watches', label: 'Current Inventory' },
   { href: '/sourcing', label: 'Sourcing' },
-  { href: '/blog', label: 'Journal' },
   { href: '/reviews', label: 'Reviews' },
-  { href: '/about', label: 'Maison' },
+  { href: '/about', label: 'How We Work' },
   { href: '/contact', label: 'Contact' },
 ];
 

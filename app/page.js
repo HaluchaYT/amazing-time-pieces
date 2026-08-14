@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-6">
           <div className="w-px h-16 bg-oxblood-400/60" />
           <div className="text-[9px] uppercase tracking-[0.5em] text-oxblood-300 [writing-mode:vertical-rl] rotate-180">
-            MMXIV — MMXXVI
+            MMXIX — MMXXVI
           </div>
           <div className="w-px h-16 bg-oxblood-400/60" />
         </div>
@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-ink-100">
             {[
-              { n: 'MMXIV', l: 'Established', s: 'Trading Since 2014' },
+              { n: 'MMXIX', l: 'Established', s: 'Trading Since 2019' },
               { n: '1,247', l: 'Timepieces Placed', s: 'Across 34 Countries' },
               { n: '40', l: 'Point Authentication', s: 'Every Watch' },
               { n: '48h', l: 'Sourcing Response', s: 'Grail-tier or Modern' },

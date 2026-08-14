@@ -4,7 +4,7 @@ import SourcingForm from './SourcingForm';
 export const metadata = {
   title: 'Watch Sourcing — Discontinued & Rare References Located',
   description:
-    'Watch sourcing for collectors. Rolex, Patek Philippe, Audemars Piguet, F.P. Journe — located, authenticated, delivered by Amazing Time Pieces.',
+    'Watch sourcing for collectors. Rolex, Patek Philippe, Audemars Piguet and more — located, authenticated, delivered by Amazing Time Pieces.',
 };
 
 export default function SourcingPage() {
@@ -27,13 +27,15 @@ export default function SourcingPage() {
           </div>
           <div className="max-w-3xl">
             <div className="eyebrow">Watch Sourcing</div>
-            <h1 className="section-title-lg mt-6 text-balance">
-              The watch you cannot find.
-              <span className="block font-serif italic text-oxblood-600 mt-2">Located.</span>
-            </h1>
             <div className="hairline-gold mt-8 w-16" />
-            <p className="mt-10 text-lg sm:text-xl text-ink-600 leading-relaxed max-w-2xl font-light">
-              Discontinued references. Waitlisted allocations. Grail-tier pieces that never touch a boutique display. Give us the brief — we return with authenticated options, typically within forty-eight hours.
+            <p className="mt-10 text-lg sm:text-xl text-ink-700 leading-relaxed font-light">
+              Simply share the details of your desired timepiece — whether it's an iconic classic, a sought-after modern reference, or a truly rare masterpiece. Our dedicated team leverages an extensive network of trusted and exclusive channels to source the right watch for you.
+            </p>
+            <p className="mt-6 text-lg sm:text-xl text-ink-700 leading-relaxed font-light">
+              Authenticity, transparency, and discretion are at the heart of our service. Every timepiece is carefully vetted to ensure it meets the highest standards of authenticity and condition. Once the terms are agreed upon and the deposit secured, we handle the acquisition process from sourcing through delivery.
+            </p>
+            <p className="mt-6 text-lg sm:text-xl text-ink-700 leading-relaxed font-light italic font-serif">
+              Let us turn your vision into ownership. Contact us today to begin your search for the exceptional timepiece you've been looking for.
             </p>
             <div className="mt-12">
               <a href="#request" className="btn-gold">Submit a Sourcing Request</a>
@@ -46,7 +48,6 @@ export default function SourcingPage() {
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="eyebrow">The Process</div>
-            <h2 className="section-title mt-6">Four movements. No noise.</h2>
             <div className="hairline-gold mt-6 mx-auto w-16" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -54,22 +55,22 @@ export default function SourcingPage() {
               {
                 n: 'I',
                 t: 'Submit a Request',
-                d: 'You tell us the brand, model, condition, and budget. A short call confirms the details.',
+                d: 'You tell us the brand, model, condition, and budget.',
               },
               {
                 n: 'II',
                 t: 'The Search',
-                d: 'We search our network of authenticated dealers and private collectors to find your desired timepiece.',
+                d: 'We leverage our network of trusted, authenticated dealers and private collectors to source your desired timepiece.',
               },
               {
                 n: 'III',
                 t: 'The Inspection',
-                d: 'Every timepiece is inspected and guaranteed to be authentic and functional to watch industry performance and accuracy guidelines.',
+                d: 'Every timepiece is meticulously inspected and authenticated, and is guaranteed to be fully functional and compliant with industry standards for performance and accuracy.',
               },
               {
                 n: 'IV',
                 t: 'The Delivery',
-                d: 'Every timepiece is shipped fully insured and tracked with signature delivery required after payment via wire, Zelle or cash has cleared by our banking institution.',
+                d: 'Every timepiece is shipped fully insured with tracking and signature confirmation required upon delivery. Orders are shipped only after payment by wire transfer, Zelle, or cash has been received and fully cleared by our banking institution.',
               },
             ].map((s) => (
               <div key={s.n} className="p-8 bg-bone-50 border border-ink-100 hover:border-oxblood-600/40 transition-all duration-500 group">
@@ -90,7 +91,6 @@ export default function SourcingPage() {
             <div className="eyebrow">Submit a Request</div>
             <h2 className="section-title mt-6">Desired Timepiece.</h2>
             <div className="hairline-gold mt-6 mx-auto w-16" />
-            <p className="mt-6 text-ink-600">A specialist responds within forty-eight hours.</p>
           </div>
           <SourcingForm />
         </div>

@@ -62,9 +62,6 @@ export default function ReviewsPage() {
             <span className="text-oxblood-600">Reviews</span>
           </div>
           <div className="eyebrow">In the Words of Our Clients</div>
-          <h1 className="section-title-lg mt-6 text-balance">
-            Reviews. <span className="italic text-oxblood-600">Verified.</span>
-          </h1>
           <div className="hairline-gold mt-8 w-16" />
           <p className="mt-8 max-w-2xl text-ink-600 leading-relaxed text-lg font-light">
             A decade of transactions on eBay — a perfect record from over two hundred sixty completed sales. Read every buyer comment on our eBay store, or write your own.
@@ -86,9 +83,9 @@ export default function ReviewsPage() {
             <div className="mt-1 text-[10px] italic text-ink-400 font-serif">eBay to date</div>
           </div>
           <div className="py-10 sm:py-14 text-center px-4">
-            <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">MMXIV</div>
-            <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-ink-600">Trading Since</div>
-            <div className="mt-1 text-[10px] italic text-ink-400 font-serif">Over a decade</div>
+            <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">MMXIX</div>
+            <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-ink-600">Established</div>
+            <div className="mt-1 text-[10px] italic text-ink-400 font-serif">Buying · Selling · Trading</div>
           </div>
           <div className="py-10 sm:py-14 text-center px-4">
             <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">5.0</div>
@@ -103,7 +100,7 @@ export default function ReviewsPage() {
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="eyebrow">Across the Platforms</div>
-            <h2 className="section-title mt-6">Where clients speak.</h2>
+            <h2 className="section-title mt-6">What our clients say.</h2>
             <div className="hairline-gold mt-6 mx-auto w-16" />
           </div>
 
