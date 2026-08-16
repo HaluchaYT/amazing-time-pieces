@@ -47,19 +47,15 @@ function Stars({ value = 5, size = 16 }) {
 
 export default function ReviewsPage() {
   const ebay = platforms.ebay;
-  const google = platforms.google;
-  const yelp = platforms.yelp;
 
   return (
     <>
       {/* HERO */}
-      <section className="pt-24 sm:pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-50" />
         <div className="relative container-x">
           <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
             <Link href="/" className="hover:text-oxblood-600">Home</Link>
-            <span className="mx-3 text-oxblood-600/50">·</span>
-            <span className="text-oxblood-600">Reviews</span>
           </div>
           <div className="eyebrow">In the Words of Our Clients</div>
           <div className="hairline-gold mt-8 w-16" />
@@ -83,7 +79,7 @@ export default function ReviewsPage() {
             <div className="mt-1 text-[10px] italic text-ink-400 font-serif">eBay to date</div>
           </div>
           <div className="py-10 sm:py-14 text-center px-4">
-            <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">MMXIX</div>
+            <div className="font-serif text-4xl sm:text-5xl text-oxblood-600">2019</div>
             <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-ink-600">Established</div>
             <div className="mt-1 text-[10px] italic text-ink-400 font-serif">Buying · Selling · Trading for over a decade</div>
           </div>
@@ -95,8 +91,88 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* PLATFORM SUMMARY CARDS */}
-      <section className="py-20 sm:py-28">
+      {/* EBAY FEEDBACK — moved above platform cards per owner */}
+      <section className="py-20 sm:py-28 bg-bone-100">
+        <div className="container-x">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+              <div className="eyebrow">Verified · eBay</div>
+              <h2 className="section-title mt-6 text-balance">
+                From <span className="italic text-oxblood-600">Time Promoter</span>.
+              </h2>
+              <div className="hairline-gold mt-6 w-16" />
+              <p className="mt-6 text-ink-600 max-w-xl leading-relaxed">
+                Buyer feedback from our eBay store, where {ebay.totalSold}+ timepieces have shipped worldwide with a perfect {ebay.positive}% positive record.
+              </p>
+            </div>
+            <a
+              href={ebay.feedbackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] uppercase tracking-[0.4em] text-oxblood-600 link-underline self-start md:self-end"
+            >
+              All feedback on eBay ↗
+            </a>
+          </div>
+
+          {ebay.reviews.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {ebay.reviews.map((r, i) => (
+                <article
+                  key={i}
+                  className="bg-bone-50 border border-ink-100 p-8 hover:border-oxblood-600/30 transition-all duration-500"
+                >
+                  <div className="flex items-center justify-between">
+                    <Stars value={r.rating} />
+                    <time className="text-[10px] uppercase tracking-[0.35em] text-ink-400">
+                      {new Date(r.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                    </time>
+                  </div>
+                  {r.title && (
+                    <h3 className="font-serif text-xl sm:text-2xl mt-5 leading-tight text-ink-800">
+                      "{r.title}"
+                    </h3>
+                  )}
+                  <p className={`text-ink-600 leading-relaxed ${r.title ? 'mt-4' : 'mt-5 font-serif italic text-lg'}`}>
+                    {r.body}
+                  </p>
+                  <div className="mt-6 pt-5 border-t border-ink-100 flex items-center justify-between">
+                    <span className="text-sm text-ink-500 italic font-serif">— {r.author}</span>
+                    <span className="text-[9px] uppercase tracking-[0.4em] text-oxblood-600">Verified Buyer</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-bone-50 border border-ink-100 p-10 sm:p-14 text-center">
+              <div className="flex items-center justify-center gap-3">
+                <Stars value={5} size={20} />
+                <span className="font-serif text-3xl text-ink-800">5.0</span>
+              </div>
+              <p className="mt-6 font-serif italic text-2xl text-ink-800 max-w-xl mx-auto leading-tight text-balance">
+                "{ebay.tagline}"
+              </p>
+              <p className="mt-6 text-ink-600 max-w-lg mx-auto leading-relaxed">
+                Individual buyer comments live on eBay's verified feedback page. Read every review from every one of our {ebay.totalSold}+ buyers — signed, dated, and independent.
+              </p>
+              <a
+                href={ebay.feedbackUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-oxblood mt-10 inline-flex"
+              >
+                Read All Feedback on eBay ↗
+              </a>
+              <p className="mt-6 text-[10px] uppercase tracking-[0.35em] text-ink-400">
+                Store · {ebay.handle} · {ebay.followers} followers
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* PLATFORM SUMMARY CARDS — now below eBay section */}
+      <section className="py-20 sm:py-28 bg-bone-50 border-t border-ink-100">
         <div className="container-x">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="eyebrow">Across the Platforms</div>
@@ -109,7 +185,7 @@ export default function ReviewsPage() {
               const p = platforms[key];
               const isLive = p.verified && p.url;
               return (
-                <div key={key} className={`p-8 bg-bone-50 border transition-all duration-500 ${
+                <div key={key} className={`p-8 bg-bone-100 border transition-all duration-500 ${
                   isLive ? 'border-oxblood-600/40 hover:border-oxblood-600 hover:shadow-card' : 'border-ink-100'
                 }`}>
                   <div className="flex items-center justify-between mb-6 h-8">
@@ -184,86 +260,6 @@ export default function ReviewsPage() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* EBAY FEEDBACK — LINK-OUT OR REAL COMMENTS IF ADDED */}
-      <section className="py-20 sm:py-28 bg-bone-50 border-y border-ink-100">
-        <div className="container-x">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-            <div>
-              <div className="eyebrow">Verified · eBay</div>
-              <h2 className="section-title mt-6 text-balance">
-                From <span className="italic text-oxblood-600">Time Promoter</span>.
-              </h2>
-              <div className="hairline-gold mt-6 w-16" />
-              <p className="mt-6 text-ink-600 max-w-xl leading-relaxed">
-                Buyer feedback from our eBay store, where {ebay.totalSold}+ timepieces have shipped worldwide with a perfect {ebay.positive}% positive record.
-              </p>
-            </div>
-            <a
-              href={ebay.feedbackUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] uppercase tracking-[0.4em] text-oxblood-600 link-underline self-start md:self-end"
-            >
-              All feedback on eBay ↗
-            </a>
-          </div>
-
-          {ebay.reviews.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {ebay.reviews.map((r, i) => (
-                <article
-                  key={i}
-                  className="bg-bone-100 border border-ink-100 p-8 hover:border-oxblood-600/30 transition-all duration-500"
-                >
-                  <div className="flex items-center justify-between">
-                    <Stars value={r.rating} />
-                    <time className="text-[10px] uppercase tracking-[0.35em] text-ink-400">
-                      {new Date(r.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
-                    </time>
-                  </div>
-                  {r.title && (
-                    <h3 className="font-serif text-xl sm:text-2xl mt-5 leading-tight text-ink-800">
-                      "{r.title}"
-                    </h3>
-                  )}
-                  <p className={`text-ink-600 leading-relaxed ${r.title ? 'mt-4' : 'mt-5 font-serif italic text-lg'}`}>
-                    {r.body}
-                  </p>
-                  <div className="mt-6 pt-5 border-t border-ink-100 flex items-center justify-between">
-                    <span className="text-sm text-ink-500 italic font-serif">— {r.author}</span>
-                    <span className="text-[9px] uppercase tracking-[0.4em] text-oxblood-600">Verified Buyer</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div className="bg-bone-100 border border-ink-100 p-10 sm:p-14 text-center">
-              <div className="flex items-center justify-center gap-3">
-                <Stars value={5} size={20} />
-                <span className="font-serif text-3xl text-ink-800">5.0</span>
-              </div>
-              <p className="mt-6 font-serif italic text-2xl text-ink-800 max-w-xl mx-auto leading-tight text-balance">
-                "{ebay.tagline}"
-              </p>
-              <p className="mt-6 text-ink-600 max-w-lg mx-auto leading-relaxed">
-                Individual buyer comments live on eBay's verified feedback page. Read every review from every one of our {ebay.totalSold}+ buyers — signed, dated, and independent.
-              </p>
-              <a
-                href={ebay.feedbackUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-oxblood mt-10 inline-flex"
-              >
-                Read All Feedback on eBay ↗
-              </a>
-              <p className="mt-6 text-[10px] uppercase tracking-[0.35em] text-ink-400">
-                Store · {ebay.handle} · {ebay.followers} followers
-              </p>
-            </div>
-          )}
         </div>
       </section>
 

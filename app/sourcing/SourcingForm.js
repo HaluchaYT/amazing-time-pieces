@@ -46,13 +46,13 @@ export default function SourcingForm() {
         <Field label="Email" required>
           <input type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} className="ipt" autoComplete="email" />
         </Field>
-        <Field label="Phone">
-          <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)} className="ipt" autoComplete="tel" />
+        <Field label="Phone" required>
+          <input type="tel" required value={form.phone} onChange={(e) => set('phone', e.target.value)} className="ipt" autoComplete="tel" />
         </Field>
-        <Field label="Brand">
-          <input placeholder="e.g. Patek Philippe" value={form.brand} onChange={(e) => set('brand', e.target.value)} className="ipt" />
+        <Field label="Brand(s)" required>
+          <input required placeholder="e.g. Patek Philippe" value={form.brand} onChange={(e) => set('brand', e.target.value)} className="ipt" />
         </Field>
-        <Field label="Model (if known)">
+        <Field label="Model(s) (if known)">
           <input placeholder="e.g. Nautilus" value={form.model} onChange={(e) => set('model', e.target.value)} className="ipt" />
         </Field>
         <Field label="Reference (if known)">

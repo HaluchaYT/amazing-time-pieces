@@ -42,10 +42,6 @@ export default function WatchDetail({ watch, related }) {
       <div className="pt-20 sm:pt-24 pb-4 container-x">
         <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400">
           <Link href="/" className="hover:text-oxblood-600 transition-colors">Home</Link>
-          <span className="mx-3 text-oxblood-600/50">·</span>
-          <Link href="/watches" className="hover:text-oxblood-600 transition-colors">Collection</Link>
-          <span className="mx-3 text-oxblood-600/50">·</span>
-          <span className="text-oxblood-600">{watch.brand}</span>
         </div>
       </div>
 

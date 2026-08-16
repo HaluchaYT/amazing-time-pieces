@@ -25,10 +25,10 @@ export default function Footer() {
               className="h-10 w-auto brightness-[1.15] contrast-[1.05]"
             />
             <div className="text-[10px] uppercase tracking-[0.4em] text-oxblood-300 mt-4">
-              Est. MMXIX
+              Est. 2019
             </div>
             <div className="mt-6 flex gap-4">
-              <a href="https://instagram.com/roamtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
+              <a href="https://instagram.com/amazingtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 border border-bone-100/25 flex items-center justify-center text-bone-100/70 hover:border-oxblood-400 hover:text-oxblood-300 transition-all">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
                   <rect x="3" y="3" width="18" height="18" rx="4" />
                   <circle cx="12" cy="12" r="4" />

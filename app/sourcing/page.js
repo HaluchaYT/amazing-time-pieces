@@ -10,7 +10,7 @@ export const metadata = {
 export default function SourcingPage() {
   return (
     <>
-      <section className="relative pt-24 sm:pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-12 sm:pt-16 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=2400&q=90"
@@ -22,8 +22,6 @@ export default function SourcingPage() {
         <div className="relative container-x">
           <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
             <Link href="/" className="hover:text-oxblood-600">Home</Link>
-            <span className="mx-3 text-oxblood-600/50">·</span>
-            <span className="text-oxblood-600">Sourcing</span>
           </div>
           <div className="max-w-3xl">
             <div className="eyebrow">Watch Sourcing</div>
@@ -55,22 +53,22 @@ export default function SourcingPage() {
               {
                 n: 'I',
                 t: 'Submit a Request',
-                d: 'You tell us the brand, model, condition, and budget.',
+                d: 'Tell us what you\'re looking for. Share your desired timepiece, reference, configuration, or any specific preferences, and we\'ll begin the search.',
               },
               {
                 n: 'II',
-                t: 'The Search',
+                t: 'We Activate Our Network',
                 d: 'We leverage our network of trusted, authenticated dealers and private collectors to source your desired timepiece.',
               },
               {
                 n: 'III',
                 t: 'The Inspection',
-                d: 'Every timepiece is meticulously inspected and authenticated, and is guaranteed to be fully functional and compliant with industry standards for performance and accuracy.',
+                d: 'Every timepiece is meticulously inspected and authenticated to ensure it is fully functional and meets our standards for performance, condition, and accuracy.',
               },
               {
                 n: 'IV',
                 t: 'The Delivery',
-                d: 'Every timepiece is shipped fully insured with tracking and signature confirmation required upon delivery. Orders are shipped only after payment by wire transfer, Zelle, or cash has been received and fully cleared by our banking institution.',
+                d: 'Once payment has been received and fully cleared, your timepiece is shipped fully insured with tracking and signature confirmation required upon delivery.',
               },
             ].map((s) => (
               <div key={s.n} className="p-8 bg-bone-50 border border-ink-100 hover:border-oxblood-600/40 transition-all duration-500 group">

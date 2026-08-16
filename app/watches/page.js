@@ -31,17 +31,15 @@ export default function WatchesPage() {
 
   return (
     <>
-      <section className="pt-24 sm:pt-32 pb-16 border-b border-ink-100 relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-16 border-b border-ink-100 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-40" />
         <div className="relative container-x">
           <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
             <Link href="/" className="hover:text-oxblood-600 transition-colors">Home</Link>
-            <span className="mx-3 text-oxblood-600/50">·</span>
-            <span className="text-oxblood-600">The Collection</span>
           </div>
           <div className="eyebrow">In Residence</div>
           <h1 className="section-title-lg mt-6 text-balance">
-            The Collection.
+            Current Inventory.
           </h1>
           <div className="hairline-gold mt-8 w-16" />
           <p className="mt-8 max-w-3xl text-ink-600 leading-relaxed text-lg font-light">
@@ -50,7 +48,7 @@ export default function WatchesPage() {
         </div>
       </section>
 
-      <section className="sticky top-16 sm:top-20 z-30 bg-bone-100/95 backdrop-blur-md border-b border-ink-100">
+      <section className="sticky top-20 z-30 bg-bone-100/95 backdrop-blur-md border-b border-ink-100">
         <div className="container-x py-4 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
           <div className="flex-1 flex gap-3 flex-wrap">
             <div className="relative flex-1 min-w-[220px]">

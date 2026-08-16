@@ -9,17 +9,15 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-24 sm:pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-50" />
         <div className="relative container-x">
           <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
             <Link href="/" className="hover:text-oxblood-600">Home</Link>
-            <span className="mx-3 text-oxblood-600/50">·</span>
-            <span className="text-oxblood-600">How We Work</span>
           </div>
           <div className="eyebrow">Client Care</div>
           <h1 className="section-title-lg mt-6 text-balance">
-            How we <span className="italic text-oxblood-600">work for you.</span>
+            Every Detail, <span className="italic text-oxblood-600">Handled With Care.</span>
           </h1>
           <div className="hairline-gold mt-8 w-16" />
         </div>
@@ -31,15 +29,15 @@ export default function AboutPage() {
             {[
               {
                 t: 'Payment Options',
-                d: 'Cash on secure delivery, bank wire, or Zelle — whichever you prefer, with clear instructions.',
+                d: 'Bank wire, Zelle, or cash upon secure delivery — offering a seamless and secure experience tailored to you.',
               },
               {
                 t: 'Insured Delivery',
-                d: 'Every timepiece ships nationwide fully insured, with tracking and direct signature required.',
+                d: 'Every timepiece is fully insured from the moment it leaves us until it reaches you, with nationwide shipping, tracking, and direct signature required.',
               },
               {
                 t: 'Consignment',
-                d: 'Sell your watch through us and reach a curated network of buyers instead of the open market.',
+                d: 'Entrust your timepiece to us and gain access to our curated network of qualified buyers, offering a more personal and discreet alternative to the open market.',
               },
             ].map((s) => (
               <div key={s.t} className="p-8 bg-bone-50 border border-ink-100 hover:border-oxblood-600/25 transition-all duration-500">

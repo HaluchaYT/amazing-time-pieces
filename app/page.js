@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-6">
           <div className="w-px h-16 bg-oxblood-400/60" />
           <div className="text-[9px] uppercase tracking-[0.5em] text-oxblood-300 [writing-mode:vertical-rl] rotate-180">
-            MMXIX — MMXXVI
+            Est. 2019
           </div>
           <div className="w-px h-16 bg-oxblood-400/60" />
         </div>
@@ -50,7 +50,7 @@ export default function HomePage() {
               </span>
             </h1>
             <div className="mt-12 flex flex-col sm:flex-row gap-4 animate-fadeUp delay-300">
-              <Link href="/watches" className="btn-oxblood">Browse the Collection</Link>
+              <Link href="/watches" className="btn-oxblood">Browse Current Inventory</Link>
               <Link href="/sourcing" className="inline-flex items-center justify-center px-8 py-4 border border-bone-100/40 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-bone-50 hover:text-ink-800">
                 Submit a Sourcing Request
               </Link>
@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-ink-100">
             {[
-              { n: 'MMXIX', l: 'Established', s: 'Trading Since 2019' },
+              { n: '2019', l: 'Established', s: 'Trading Since 2019' },
               { n: '1,247', l: 'Timepieces Placed', s: 'Across 34 Countries' },
               { n: '40', l: 'Point Authentication', s: 'Every Watch' },
               { n: '48h', l: 'Sourcing Response', s: 'Grail-tier or Modern' },

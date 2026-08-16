@@ -32,14 +32,10 @@ export default function BlogPostPage({ params }) {
   return (
     <>
       <article>
-        <header className="pt-24 sm:pt-32 pb-10">
+        <header className="pt-12 sm:pt-16 pb-10">
           <div className="container-narrow max-w-3xl">
             <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
               <Link href="/" className="hover:text-oxblood-600">Home</Link>
-              <span className="mx-3 text-oxblood-600/50">·</span>
-              <Link href="/blog" className="hover:text-oxblood-600">Journal</Link>
-              <span className="mx-3 text-oxblood-600/50">·</span>
-              <span className="text-oxblood-600">{post.category}</span>
             </div>
             <div className="eyebrow">{post.category} · {post.readTime}</div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-6 leading-[1.05] text-balance">{post.title}</h1>

@@ -11,13 +11,11 @@ export default function BlogPage() {
   const [hero, ...rest] = posts;
   return (
     <>
-      <section className="pt-24 sm:pt-32 pb-12 relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-40" />
         <div className="relative container-x">
           <div className="text-[10px] uppercase tracking-[0.4em] text-ink-400 mb-6">
             <Link href="/" className="hover:text-oxblood-600">Home</Link>
-            <span className="mx-3 text-oxblood-600/50">·</span>
-            <span className="text-oxblood-600">Journal</span>
           </div>
           <div className="eyebrow">The Journal</div>
           <h1 className="section-title-lg mt-6 text-balance">

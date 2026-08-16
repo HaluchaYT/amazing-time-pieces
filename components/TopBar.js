@@ -1,6 +1,6 @@
 const MESSAGES = [
   'Complimentary Shipping Nationwide',
-  'Cash · Wire · Zelle — Your Preference',
+  'Bank Wire · Zelle · Cash — Your Preference',
 ];
 
 export default function TopBar() {
@@ -23,7 +23,7 @@ export default function TopBar() {
             <a href="tel:+16503465605" className="hover:text-oxblood-300 transition-colors">
               +1 (650) 346-5605
             </a>
-            <a href="https://instagram.com/roamtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-oxblood-300 transition-colors">
+            <a href="https://instagram.com/amazingtimepieces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-oxblood-300 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <rect x="3" y="3" width="18" height="18" rx="4" />
                 <circle cx="12" cy="12" r="4" />
