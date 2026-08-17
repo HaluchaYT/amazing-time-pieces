@@ -41,7 +41,7 @@ export default function WatchCard({ watch }) {
           {watch.model}
         </div>
         <div className="text-xs text-ink-400 mt-1 italic font-serif">
-          Ref. {watch.reference} · {watch.year}
+          Ref. {watch.reference}
         </div>
         <div className="flex items-baseline justify-between mt-5 pt-4 border-t border-ink-100">
           <span className="font-serif text-xl text-oxblood-600">{formatPrice(watch.price)}</span>

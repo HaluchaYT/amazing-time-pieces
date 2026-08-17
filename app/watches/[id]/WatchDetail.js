@@ -27,15 +27,12 @@ export default function WatchDetail({ watch, related }) {
   };
 
   const specs = [
+    { l: 'Brand', v: watch.brand },
+    { l: 'Model', v: watch.model },
     { l: 'Reference', v: watch.reference },
-    { l: 'Year of Production', v: watch.year },
     { l: 'Condition', v: watch.condition },
-    { l: 'Case', v: `${watch.caseSize} · ${watch.caseMaterial}` },
-    { l: 'Dial', v: watch.dial },
-    { l: 'Movement', v: watch.movement },
-    { l: 'Bracelet / Strap', v: watch.bracelet },
-    { l: 'Box & Papers', v: `${watch.box ? 'Included' : 'None'} · ${watch.papers ? 'Included' : 'None'}` },
-  ];
+    { l: 'Box & Papers', v: `${watch.box ? 'Included' : 'Not included'} · ${watch.papers ? 'Included' : 'Not included'}` },
+  ].filter((s) => s.v);
 
   return (
     <>
@@ -82,7 +79,7 @@ export default function WatchDetail({ watch, related }) {
           <div>
             <div className="text-[10px] uppercase tracking-[0.4em] text-oxblood-600">{watch.brand}</div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl mt-4 leading-[1.05] text-balance">{watch.model}</h1>
-            <div className="mt-4 text-ink-500 italic font-serif">Reference {watch.reference} · {watch.year}</div>
+            <div className="mt-4 text-ink-500 italic font-serif">Reference {watch.reference}</div>
             <div className="hairline-gold mt-8 w-16" />
 
             <div className="mt-10 flex items-baseline gap-4">
