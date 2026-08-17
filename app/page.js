@@ -11,12 +11,12 @@ export default function HomePage() {
       <section className="relative min-h-[55svh] sm:min-h-[65svh] flex items-center overflow-hidden bg-ink-800">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=2600&q=90"
-            alt="Rare timepiece"
-            className="w-full h-full object-cover animate-kenburns"
+            src="/hero-rolex-deepsea.jpg"
+            alt="Rolex Deepsea Sea-Dweller"
+            className="w-full h-full object-cover object-center animate-kenburns"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/30 to-ink-900/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-900/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-900/80 via-ink-900/30 to-transparent" />
         </div>
 
         {/* Vertical rule with red */}
