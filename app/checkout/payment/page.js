@@ -10,13 +10,6 @@ import { formatPrice } from '@/lib/watches';
 
 const OPTIONS = [
   {
-    id: 'cash',
-    title: 'Cash on Delivery',
-    tag: 'In-person only',
-    short: 'Pay in cash at hand-delivery or showroom pickup.',
-    icon: '💵',
-  },
-  {
     id: 'wire',
     title: 'Bank Wire Transfer',
     tag: 'Domestic & International',
@@ -29,6 +22,13 @@ const OPTIONS = [
     tag: 'US only · Up to $10,000 daily',
     short: 'Pay quickly through your bank\'s Zelle service — no fees.',
     icon: '⚡',
+  },
+  {
+    id: 'cash',
+    title: 'Cash on Delivery',
+    tag: 'In-person only',
+    short: 'Pay in cash at hand-delivery or showroom pickup.',
+    icon: '💵',
   },
 ];
 

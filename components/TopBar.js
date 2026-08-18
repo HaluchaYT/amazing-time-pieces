@@ -1,6 +1,6 @@
 const MESSAGES = [
-  'Complimentary Shipping Nationwide',
-  'Bank Wire · Zelle · Cash — Your Preference',
+  'Complimentary Shipping · United States',
+  'Bank Wire · Zelle · Cash',
 ];
 
 export default function TopBar() {

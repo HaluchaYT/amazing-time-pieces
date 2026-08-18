@@ -108,11 +108,10 @@ export default function WatchDetail({ watch, related }) {
               </button>
             </div>
 
-            <div className="mt-8 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-8 grid grid-cols-2 gap-3 text-center">
               {[
                 { i: '◈', l: 'Authenticated' },
                 { i: '✈', l: 'Insured Ship' },
-                { i: '↺', l: '7-Day Return' },
               ].map((t) => (
                 <div key={t.l} className="bg-bone-50 border border-ink-100 py-5">
                   <div className="text-oxblood-600 text-xl">{t.i}</div>

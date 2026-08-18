@@ -3,7 +3,11 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import WatchCard from '@/components/WatchCard';
-import { watches, getAllBrands } from '@/lib/watches';
+import SoldCard from '@/components/SoldCard';
+import { getAvailableWatches, getSoldWatches, getAllBrands } from '@/lib/watches';
+
+const availableWatches = getAvailableWatches();
+const soldWatches = getSoldWatches();
 
 export default function WatchesPage() {
   const brands = getAllBrands();
@@ -12,7 +16,7 @@ export default function WatchesPage() {
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
-    let list = [...watches];
+    let list = [...availableWatches];
     if (brand !== 'All') list = list.filter((w) => w.brand === brand);
     if (query.trim()) {
       const q = query.toLowerCase();
@@ -25,7 +29,6 @@ export default function WatchesPage() {
     }
     if (sort === 'price-asc') list.sort((a, b) => a.price - b.price);
     if (sort === 'price-desc') list.sort((a, b) => b.price - a.price);
-    if (sort === 'year-desc') list.sort((a, b) => b.year - a.year);
     return list;
   }, [brand, sort, query]);
 
@@ -85,7 +88,6 @@ export default function WatchesPage() {
             <option value="featured">Sort order</option>
             <option value="price-asc">Price — Low to High</option>
             <option value="price-desc">Price — High to Low</option>
-            <option value="year-desc">Year — Newest First</option>
           </select>
         </div>
       </section>
@@ -94,7 +96,7 @@ export default function WatchesPage() {
         <div className="container-x">
           <div className="mb-10 flex items-baseline justify-between border-b border-ink-100 pb-6">
             <div className="text-sm text-ink-400">
-              Showing <span className="text-oxblood-600">{filtered.length}</span> of {watches.length} timepieces
+              Showing <span className="text-oxblood-600">{filtered.length}</span> available
             </div>
             <div className="text-[10px] uppercase tracking-[0.4em] text-ink-300">Updated Daily</div>
           </div>
@@ -113,6 +115,35 @@ export default function WatchesPage() {
           )}
         </div>
       </section>
+
+      {/* RECENTLY SOLD */}
+      {soldWatches.length > 0 && (
+        <section className="py-16 sm:py-20 border-t border-ink-100 bg-bone-50">
+          <div className="container-x">
+            <div className="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <div className="eyebrow">Archive</div>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight text-ink-800 text-balance">
+                  Recently <span className="italic text-oxblood-600">Sold.</span>
+                </h2>
+                <div className="hairline-gold mt-4 w-16" />
+                <p className="mt-4 max-w-2xl text-ink-500 leading-relaxed">
+                  A selection of pieces that have found new wrists. Looking for something similar? Submit a sourcing request and we will find it.
+                </p>
+              </div>
+              <Link href="/sourcing#request" className="text-[10px] uppercase tracking-[0.4em] text-oxblood-600 link-underline self-start sm:self-end">
+                Source a Similar Piece →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+              {soldWatches.map((w) => (
+                <SoldCard key={w.id} watch={w} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-bone-100 py-20 sm:py-28 border-t border-oxblood-600/15 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-fade opacity-50" />
