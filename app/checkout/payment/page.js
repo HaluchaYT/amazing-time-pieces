@@ -8,6 +8,15 @@ import { useCheckout } from '@/components/CheckoutContext';
 import CheckoutSteps from '@/components/CheckoutSteps';
 import { formatPrice } from '@/lib/watches';
 
+const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '1f3cf0e3-32d9-4131-adf7-44bae0c5c1ac';
+
+const METHOD_LABEL = {
+  wire: 'Bank Wire Transfer',
+  zelle: 'Zelle',
+  cash: 'Cash on Delivery',
+};
+
 const OPTIONS = [
   {
     id: 'wire',
@@ -46,25 +55,71 @@ export default function PaymentPage() {
     if (hydrated && !info.firstName) router.replace('/checkout');
   }, [cartHydrated, hydrated, items.length, info.firstName, router]);
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     setError(null);
     if (!selected) return setError('Select a payment method to continue.');
     if (!agree) return setError('Please confirm you agree to the order terms.');
 
     setProcessing(true);
     const id = generateOrderId();
+    const placedAt = new Date().toISOString();
     const orderPayload = {
       method: selected,
-      placedAt: new Date().toISOString(),
+      placedAt,
       subtotal,
       items,
       info,
     };
     setPayment(orderPayload);
-    setTimeout(() => {
-      clear();
-      router.push('/checkout/confirmation');
-    }, 900);
+
+    // Send order details to getyours@amazingtimepieces.com via Web3Forms
+    const itemLines = items
+      .map((i) => `  • ${i.brand} ${i.model} (Ref. ${i.reference}) — ${formatPrice(i.price)}`)
+      .join('\n');
+    const shippingLabel = {
+      'insured-overnight': 'Insured Overnight',
+      'insured-2day': 'Insured 2-Day',
+      'in-person': 'In-Person Delivery',
+      'appointment': 'In-Person Pickup',
+    }[info.shippingMethod] || info.shippingMethod;
+
+    const emailPayload = {
+      access_key: WEB3FORMS_KEY,
+      subject: `[Amazing Timepieces] NEW ORDER ${id} — ${formatPrice(subtotal)} · ${METHOD_LABEL[selected]}`,
+      from_name: 'Amazing Timepieces — Orders',
+      replyto: info.email,
+      order_number: id,
+      total: formatPrice(subtotal),
+      payment_method: METHOD_LABEL[selected],
+      delivery_method: shippingLabel,
+      placed_at: new Date(placedAt).toLocaleString('en-US'),
+      customer_name: `${info.firstName} ${info.lastName}`,
+      customer_email: info.email,
+      customer_phone: info.phone,
+      shipping_address: [
+        info.address1,
+        info.address2,
+        `${info.city}, ${info.state} ${info.zip}`,
+        info.country,
+      ].filter(Boolean).join('\n'),
+      items_ordered: itemLines,
+      notes: info.notes || '(none)',
+      botcheck: '',
+    };
+
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(emailPayload),
+      });
+    } catch (_) {
+      // Email failure is non-fatal — order still records locally and shows confirmation.
+      // Owner can also see submissions in the Web3Forms dashboard.
+    }
+
+    clear();
+    router.push('/checkout/confirmation');
   };
 
   if (!hydrated || !cartHydrated) {
