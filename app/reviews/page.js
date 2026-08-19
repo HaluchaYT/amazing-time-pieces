@@ -263,7 +263,10 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* LEAVE A REVIEW CTA */}
+      {/* LEAVE A REVIEW CTA — Google / Yelp focused. eBay feedback is
+          collected automatically on every eBay transaction, so this
+          section drives the platforms where we need help building
+          social proof. */}
       <section className="relative py-24 sm:py-32 bg-ink-800 text-bone-50 overflow-hidden border-t-2 border-oxblood-600">
         <div className="absolute inset-0 bg-radial-fade opacity-60" />
         <div className="relative container-narrow text-center">
@@ -275,17 +278,43 @@ export default function ReviewsPage() {
           </h2>
           <div className="hairline-gold mt-6 mx-auto w-16" />
           <p className="mt-8 text-bone-100/80 leading-relaxed max-w-xl mx-auto">
-            If we have earned it, a short honest review on the platform of your choice helps future collectors find us. If we have missed the mark, we would rather hear it from you directly — before anywhere else.
+            If we have earned it, a short honest review on <span className="text-oxblood-300">Google</span> or <span className="text-oxblood-300">Yelp</span> helps future collectors find us. If we have missed the mark, we would rather hear it from you directly — before anywhere else.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href={ebay.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-oxblood-600 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-oxblood-500"
-            >
-              Leave eBay Feedback
-            </a>
+            {google.url ? (
+              <a
+                href={google.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-oxblood-600 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-oxblood-500"
+              >
+                Leave a Google Review
+              </a>
+            ) : (
+              <span
+                title="Google Business profile coming soon — contact us in the meantime"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-oxblood-600/60 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] cursor-not-allowed"
+              >
+                Google Review · Coming Soon
+              </span>
+            )}
+            {yelp.url ? (
+              <a
+                href={yelp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-oxblood-300 text-oxblood-200 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-oxblood-300 hover:text-ink-800"
+              >
+                Leave a Yelp Review
+              </a>
+            ) : (
+              <span
+                title="Yelp business profile coming soon — contact us in the meantime"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-bone-100/25 text-bone-100/60 font-medium tracking-[0.25em] uppercase text-[11px] cursor-not-allowed"
+              >
+                Yelp Review · Coming Soon
+              </span>
+            )}
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border border-bone-100/40 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-bone-50 hover:text-ink-800"
@@ -293,8 +322,8 @@ export default function ReviewsPage() {
               Contact Us Directly
             </Link>
           </div>
-          <p className="mt-8 text-[10px] uppercase tracking-[0.35em] text-bone-100/40">
-            Every review — good or otherwise — is read personally by the owner.
+          <p className="mt-8 text-[10px] uppercase tracking-[0.35em] text-bone-100/40 max-w-xl mx-auto">
+            eBay feedback is collected automatically with every eBay sale — we're building our Google & Yelp presence, and would be honored by your review there.
           </p>
         </div>
       </section>

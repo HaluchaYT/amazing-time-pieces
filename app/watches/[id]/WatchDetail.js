@@ -141,7 +141,7 @@ export default function WatchDetail({ watch, related }) {
               <div className="eyebrow">Payment Options</div>
               <h3 className="font-serif text-2xl mt-3">At your discretion.</h3>
               <p className="mt-4 text-sm text-ink-600 leading-relaxed">
-                At checkout, settle by <span className="text-oxblood-600">cash on secure delivery</span>, <span className="text-oxblood-600">bank wire</span>, or <span className="text-oxblood-600">Zelle</span>. Full instructions provided after your details are confirmed.
+                At checkout, settle by <span className="text-oxblood-600">bank wire</span>, <span className="text-oxblood-600">Zelle</span>, or <span className="text-oxblood-600">cash on secure delivery</span>. Full instructions provided after your details are confirmed.
               </p>
             </div>
           </div>

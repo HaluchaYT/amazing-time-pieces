@@ -45,21 +45,21 @@ export default function HomePage() {
               className="hidden sm:block h-24 lg:h-32 w-auto flex-shrink-0 drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] animate-fadeUp"
             />
             <div className="flex-1">
-              <div className="uppercase tracking-[0.4em] text-[10px] text-oxblood-300 font-medium animate-fadeUp">
-                A Private Watch Atelier
-              </div>
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-[1.05] text-bone-50 animate-fadeUp delay-100 text-balance">
-                Timepieces of consequence,
-                <span className="block font-serif italic text-oxblood-300 mt-1">
-                  offered one wrist at a time.
-                </span>
-              </h1>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fadeUp delay-300">
+              <div className="flex flex-col sm:flex-row gap-3 animate-fadeUp">
                 <Link href="/watches" className="btn-oxblood">Browse Current Inventory</Link>
                 <Link href="/sourcing" className="inline-flex items-center justify-center px-8 py-4 border border-bone-100/40 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-bone-50 hover:text-ink-800">
                   Submit a Sourcing Request
                 </Link>
               </div>
+              <div className="mt-8 uppercase tracking-[0.4em] text-[10px] text-oxblood-300 font-medium animate-fadeUp delay-100">
+                A Private Watch Atelier
+              </div>
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-[1.05] text-bone-50 animate-fadeUp delay-200 text-balance">
+                Timepieces of consequence,
+                <span className="block font-serif italic text-oxblood-300 mt-1">
+                  offered one wrist at a time.
+                </span>
+              </h1>
             </div>
           </div>
           {/* ATP mark for mobile — sits above text on small screens */}
