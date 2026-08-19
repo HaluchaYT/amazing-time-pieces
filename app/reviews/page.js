@@ -98,7 +98,7 @@ export default function ReviewsPage() {
             <div>
               <div className="eyebrow">Verified · eBay</div>
               <h2 className="section-title mt-6 text-balance">
-                From <span className="italic text-oxblood-600">Time Promoter</span>.
+                From <span className="italic text-oxblood-600">Amazing Timepieces LLC</span>.
               </h2>
               <div className="hairline-gold mt-6 w-16" />
               <p className="mt-6 text-ink-600 max-w-xl leading-relaxed">
