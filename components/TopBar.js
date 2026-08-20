@@ -1,9 +1,16 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+
 const MESSAGES = [
   'Complimentary Shipping · United States',
   'Bank Wire · Zelle · Cash',
 ];
 
 export default function TopBar() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/admin')) return null;
+
   return (
     <div className="relative bg-ink-800 border-b border-oxblood-600/40 overflow-hidden">
       <div className="container-x">

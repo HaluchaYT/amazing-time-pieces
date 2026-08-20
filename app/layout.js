@@ -1,4 +1,5 @@
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import { CartProvider } from '@/components/CartProvider';
 import { CheckoutProvider } from '@/components/CheckoutContext';
 import TopBar from '@/components/TopBar';
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </CheckoutProvider>
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/checkout', '/cart'],
+        disallow: ['/checkout', '/cart', '/admin', '/api'],
       },
     ],
     sitemap: 'https://amazingtimepieces.com/sitemap.xml',

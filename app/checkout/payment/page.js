@@ -115,7 +115,33 @@ export default function PaymentPage() {
       });
     } catch (_) {
       // Email failure is non-fatal — order still records locally and shows confirmation.
-      // Owner can also see submissions in the Web3Forms dashboard.
+    }
+
+    // Also log the order to the admin dashboard (Supabase)
+    try {
+      await fetch('/api/log-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'order',
+          subject: `Order ${id} — ${METHOD_LABEL[selected]}`,
+          customer_name: `${info.firstName} ${info.lastName}`,
+          customer_email: info.email,
+          customer_phone: info.phone,
+          total_cents: Math.round(subtotal * 100),
+          payload: {
+            order_number: id,
+            placed_at: placedAt,
+            payment_method: METHOD_LABEL[selected],
+            delivery_method: shippingLabel,
+            subtotal,
+            items,
+            info,
+          },
+        }),
+      });
+    } catch (_) {
+      // Non-fatal — Web3Forms email still went, order still confirms locally
     }
 
     clear();

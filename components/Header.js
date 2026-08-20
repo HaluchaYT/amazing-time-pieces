@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useCart } from './CartProvider';
 
@@ -14,9 +15,13 @@ const NAV = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { count } = useCart();
+
+  // Hide marketing header on admin pages
+  if (pathname?.startsWith('/admin')) return null;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);

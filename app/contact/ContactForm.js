@@ -40,6 +40,19 @@ export default function ContactForm() {
       const data = await res.json();
       if (data.success) {
         setStatus('done');
+        // Fire-and-forget log to admin dashboard (Supabase)
+        fetch('/api/log-submission', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'contact',
+            subject: `Contact — ${form.subject}`,
+            customer_name: form.name,
+            customer_email: form.email,
+            customer_phone: form.phone || null,
+            payload: form,
+          }),
+        }).catch(() => {});
       } else {
         setStatus('idle');
         setError(data.message || 'Something went wrong. Please try again or email us directly.');

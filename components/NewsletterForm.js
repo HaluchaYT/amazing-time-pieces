@@ -32,6 +32,17 @@ export default function NewsletterForm() {
       const data = await res.json();
       if (data.success) {
         setStatus('done');
+        // Fire-and-forget log
+        fetch('/api/log-submission', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'newsletter',
+            subject: 'Newsletter Signup',
+            customer_email: email,
+            payload: { signup_email: email },
+          }),
+        }).catch(() => {});
         setEmail('');
         setTimeout(() => setStatus('idle'), 4000);
       } else {
