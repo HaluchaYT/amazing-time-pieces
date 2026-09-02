@@ -6,14 +6,14 @@ export default function SoldCard({ watch }) {
           src={watch.image}
           alt={`${watch.brand} ${watch.model} — Sold`}
           loading="lazy"
-          className="w-full h-full object-cover grayscale-[0.4] opacity-95 transition-all duration-700"
+          className="w-full h-full object-cover grayscale-[0.3] opacity-95 transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-ink-900/10" />
+        <div className="absolute inset-0 bg-ink-900/5" />
 
-        {/* Diagonal SOLD banner — semi-transparent so watch face shows through */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="bg-oxblood-600/60 backdrop-blur-[1px] text-bone-50 px-8 py-2 -rotate-12 border border-bone-50/30 shadow-lg">
-            <div className="font-serif text-2xl tracking-[0.3em] font-medium">SOLD</div>
+        {/* SOLD ribbon pinned to the top — small and translucent so the watch stays fully visible */}
+        <div className="absolute top-0 inset-x-0 flex justify-center pointer-events-none">
+          <div className="bg-oxblood-600/70 backdrop-blur-[2px] text-bone-50 px-6 py-1.5 border-x border-b border-bone-50/25 shadow-md rounded-b">
+            <div className="font-serif text-xs tracking-[0.4em] font-medium">SOLD</div>
           </div>
         </div>
       </div>
