@@ -47,6 +47,8 @@ function Stars({ value = 5, size = 16 }) {
 
 export default function ReviewsPage() {
   const ebay = platforms.ebay;
+  const google = platforms.google;
+  const yelp = platforms.yelp;
 
   return (
     <>
