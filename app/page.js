@@ -8,15 +8,19 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[55svh] sm:min-h-[65svh] flex items-center overflow-hidden bg-ink-800">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[68svh] sm:min-h-[65svh] flex items-end lg:items-center overflow-hidden bg-ink-900">
+        {/* Photo: full-bleed on mobile/tablet, pinned to the left ~58% on desktop so the text has clear dark space */}
+        <div className="absolute inset-0 lg:right-auto lg:w-[58%] overflow-hidden">
           <img
             src="/hero-rolex-deepsea.jpg"
             alt="Rolex Deepsea Sea-Dweller"
-            className="w-full h-full object-cover object-center animate-kenburns"
+            className="w-full h-full object-cover object-[50%_22%] sm:object-[50%_35%] lg:object-left animate-kenburns"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink-900/80 via-ink-900/30 to-transparent" />
+          {/* mobile / tablet: heavy wash from the bottom so copy sits on near-black */}
+          <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-ink-900/25 via-ink-900/60 to-ink-950" />
+          {/* desktop: dissolve the right edge into the section background */}
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-ink-900" />
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-ink-900/30 via-transparent to-ink-900/40" />
         </div>
 
         {/* Vertical rule with red */}
@@ -36,8 +40,8 @@ export default function HomePage() {
           <div className="w-px h-10 bg-oxblood-400/60" />
         </div>
 
-        <div className="relative container-x py-14 sm:py-20 text-bone-50">
-          <div className="max-w-3xl flex items-start gap-6">
+        <div className="relative container-x py-14 sm:py-20 text-bone-50 w-full">
+          <div className="max-w-3xl lg:max-w-none lg:w-[46%] lg:ml-auto flex items-start gap-6">
             {/* ATP Logo mark */}
             <img
               src="/logo-icon.png"
@@ -46,7 +50,7 @@ export default function HomePage() {
             />
             <div className="flex-1">
               <div className="flex flex-col sm:flex-row gap-3 animate-fadeUp">
-                <Link href="/watches" className="btn-oxblood">Browse Current Inventory</Link>
+                <Link href="/watches" className="btn-oxblood">Inventory, Current &amp; Previous</Link>
                 <Link href="/sourcing" className="inline-flex items-center justify-center px-8 py-4 border border-bone-100/40 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-bone-50 hover:text-ink-800">
                   Submit a Sourcing Request
                 </Link>

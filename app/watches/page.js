@@ -42,7 +42,7 @@ export default function WatchesPage() {
           </div>
           <div className="eyebrow">In Residence</div>
           <h1 className="section-title-lg mt-6 text-balance">
-            Current Inventory.
+            Inventory, Current &amp; Previous.
           </h1>
           <div className="hairline-gold mt-8 w-16" />
           <p className="mt-8 max-w-3xl text-ink-600 leading-relaxed text-lg font-light">

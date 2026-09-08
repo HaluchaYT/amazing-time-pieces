@@ -104,7 +104,7 @@ export default function ReviewsPage() {
               </h2>
               <div className="hairline-gold mt-6 w-16" />
               <p className="mt-6 text-ink-600 max-w-xl leading-relaxed">
-                Buyer feedback from our eBay store, where {ebay.totalSold}+ timepieces have shipped worldwide with a perfect {ebay.positive}% positive record.
+                Buyer feedback from our eBay store, where over 265 items have shipped worldwide with a perfect {ebay.positive}% positive record.
               </p>
             </div>
             <a
