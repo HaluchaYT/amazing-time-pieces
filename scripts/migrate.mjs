@@ -35,6 +35,45 @@ function hashOf(text) {
   return createHash("sha256").update(text).digest("hex").slice(0, 16);
 }
 
+function splitStatements(text) {
+  const stmts = [];
+  let current = "";
+  let inDollar = false;
+  let dollarTag = "";
+  let i = 0;
+  while (i < text.length) {
+    if (text[i] === "$") {
+      const m = text.slice(i).match(/^\$([a-zA-Z_][a-zA-Z0-9_]*)?\$/);
+      if (m) {
+        const tag = m[0];
+        if (!inDollar) {
+          inDollar = true;
+          dollarTag = tag;
+        } else if (tag === dollarTag) {
+          inDollar = false;
+          dollarTag = "";
+        }
+        current += tag;
+        i += tag.length;
+        continue;
+      }
+    }
+    if (!inDollar && text[i] === ";") {
+      current += ";";
+      const trimmed = current.trim();
+      if (trimmed && !/^\s*--/.test(trimmed)) stmts.push(trimmed);
+      current = "";
+      i++;
+      continue;
+    }
+    current += text[i];
+    i++;
+  }
+  const tail = current.trim();
+  if (tail && !/^\s*--/.test(tail)) stmts.push(tail);
+  return stmts;
+}
+
 async function main() {
   const files = (await readdir(MIGRATIONS_DIR))
     .filter((f) => f.endsWith(".sql"))
@@ -68,10 +107,7 @@ async function main() {
     }
 
     console.log(`  → ${file}`);
-    const statements = body
-      .split(/;\s*$/m)
-      .map((s) => s.trim())
-      .filter((s) => s.length > 0 && !s.match(/^\s*--/));
+    const statements = splitStatements(body);
     for (const stmt of statements) {
       await sql.query(stmt);
     }
