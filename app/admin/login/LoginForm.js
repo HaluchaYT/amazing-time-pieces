@@ -1,48 +1,42 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { createClient, isSupabaseConfigured } from '@/lib/supabase/client';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm({ next }) {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle');
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-
-    if (!isSupabaseConfigured()) {
-      setError('Admin backend not configured — see ADMIN_SETUP.md.');
-      return;
-    }
-
-    setStatus('sending');
+    setStatus("sending");
     try {
-      const supabase = createClient();
-      const redirectTo = `${window.location.origin}/admin/auth/callback?next=${encodeURIComponent(next || '/admin')}`;
-      const { error: sbError } = await supabase.auth.signInWithOtp({
-        email,
-        options: {
-          emailRedirectTo: redirectTo,
-          shouldCreateUser: true,
-        },
+      const res = await fetch("/api/admin/request-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, next: next || "/admin" }),
       });
-      if (sbError) throw sbError;
-      // Route to the same page with sent=1 so the success card renders.
-      router.replace(`/admin/login?sent=1&next=${encodeURIComponent(next || '/admin')}`);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Could not send link. Try again.");
+      }
+      // Response is deliberately opaque — always redirect to success card.
+      router.replace(`/admin/login?sent=1&next=${encodeURIComponent(next || "/admin")}`);
     } catch (err) {
-      setStatus('idle');
-      setError(err.message || 'Could not send magic link. Try again.');
+      setStatus("idle");
+      setError(err.message || "Could not send magic link. Try again.");
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="bg-bone-50 border border-ink-100 p-8">
       <label className="block">
-        <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">Email Address *</span>
+        <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-2 block">
+          Email Address *
+        </span>
         <input
           type="email"
           required
@@ -62,14 +56,14 @@ export default function LoginForm({ next }) {
 
       <button
         type="submit"
-        disabled={status === 'sending'}
+        disabled={status === "sending"}
         className="mt-6 w-full inline-flex items-center justify-center px-6 py-3.5 bg-oxblood-600 text-bone-50 font-medium tracking-[0.25em] uppercase text-[11px] transition-all duration-500 hover:bg-oxblood-500 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {status === 'sending' ? 'Sending link…' : 'Email me a magic link'}
+        {status === "sending" ? "Sending link…" : "Email me a magic link"}
       </button>
 
       <p className="mt-5 text-xs text-ink-400 leading-relaxed">
-        We'll email you a secure one-time link. Click it to sign in — no password to remember.
+        We&apos;ll email you a secure one-time link. Click it to sign in — no password to remember.
       </p>
     </form>
   );

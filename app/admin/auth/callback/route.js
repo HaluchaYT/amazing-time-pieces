@@ -1,27 +1,30 @@
-import { NextResponse } from 'next/server';
-import { createClient, isAdminEmail } from '@/lib/supabase/server';
+import { NextResponse } from "next/server";
+import {
+  consumeMagicToken,
+  isAdminEmail,
+  createSessionToken,
+  sessionCookieOptions,
+  SESSION_COOKIE_NAME,
+} from "@/lib/db";
+
+export const runtime = "nodejs";
 
 export async function GET(request) {
   const { searchParams, origin } = new URL(request.url);
-  const code = searchParams.get('code');
-  const next = searchParams.get('next') || '/admin';
+  const raw = searchParams.get("t");
+  const next = searchParams.get("next") || "/admin";
 
-  if (!code) {
+  if (!raw) {
     return NextResponse.redirect(`${origin}/admin/login?denied=1`);
   }
 
-  const supabase = createClient();
-  const { data, error } = await supabase.auth.exchangeCodeForSession(code);
-
-  if (error || !data?.user) {
+  const result = await consumeMagicToken(raw);
+  if (!result || !isAdminEmail(result.email)) {
     return NextResponse.redirect(`${origin}/admin/login?denied=1`);
   }
 
-  // Enforce allowlist server-side even though middleware also checks.
-  if (!isAdminEmail(data.user.email)) {
-    await supabase.auth.signOut();
-    return NextResponse.redirect(`${origin}/admin/login?denied=1`);
-  }
-
-  return NextResponse.redirect(`${origin}${next}`);
+  const token = createSessionToken(result.email);
+  const response = NextResponse.redirect(`${origin}${next}`);
+  response.cookies.set(SESSION_COOKIE_NAME, token, sessionCookieOptions());
+  return response;
 }

@@ -25,7 +25,7 @@ export default function AdminLoginPage({ searchParams }) {
         {setup && (
           <div className="mb-6 p-4 border border-oxblood-600/40 bg-oxblood-50 text-oxblood-700 text-sm">
             <strong className="block mb-1">Admin backend not yet configured.</strong>
-            Set up a Supabase project and add <code>NEXT_PUBLIC_SUPABASE_URL</code>, <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>, and <code>SUPABASE_SERVICE_ROLE_KEY</code> to your Vercel env vars. See ADMIN_SETUP.md for the 5-minute walkthrough.
+            Connect Neon to this Vercel project (Storage → Neon → Add) so <code>DATABASE_URL</code> is set, then redeploy.
           </div>
         )}
 
